@@ -2,7 +2,8 @@ document.getElementById("header").innerHTML = `
 <!-- Main box -->
 <div class="main-box">
     <div class="logo-box">
-        <div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo-3.png"  width="60" 
+        height="0" alt="" title=""></a></div>
     </div>
 
     <!--Nav Box-->
@@ -12,50 +13,21 @@ document.getElementById("header").innerHTML = `
                 <li class="current dropdown">
                     <a href="index.html">Home</a>
                 </li>
-                <li class="dropdown">
-                    <span>Page</span>
-                    <ul>
-                        <li class="dropdown">
-                            <span>Dashboard</span>
-                            <ul>
-                                <li class="active"><a href="dashboard.html"> Dashboard</a></li>
-                                <li><a href="dashboard-profile.html">Profile</a></li>
-                                <li><a href="dashboard-listing.html">Listings</a></li>
-                                <li><a href="dashboard-messages.html">Messages </a></li>
-                                <li><a href="dashboard-reviews.html">Reviews</a></li>
-                                
-                            </ul>
-                        </li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="how-it-works.html">How It Works</a></li> 
-                        <li><a href="listing-style.html">Listing Style</a></li>
-                        <li><a href="terms-and-condition.html">Terms and Condition</a></li>
-                        <li><a href="elements.html">UI Elements</a></li>
-                        <li><a href="error-page.html">Error 404</a></li>
-                    </ul>
+                <li >
+                <span><a href="listing-layout-2.html">items</a></span>
+                 </li>
+                <li>
+                <span><a href="dashboard-profile.html">Profil</a></span>
                 </li>
-                <li class="dropdown">
-                    <span>Listings</span>
-                    <ul>
-                        <li class="dropdown">
-                            <span>Listing Layout</span>
-                            <ul>
-                                <li><a href="listing-layout-2.html">Layout 02</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <span>Listing With Map</span>
-                            <ul>
-
-                                <li><a href="listing-map-layout-5.html">Map Layout 05</a></li>
-                            </ul>
-                        </li>
-                       
-                    </ul>
-                </li>
                
-                
+                <li class="dropdown">
+                <span><a href="about-us.html">About Us</a></span>
+                <ul>
+                    <li><a href="how-it-works.html">How It Works</a></li> 
+                    <li><a href="terms-and-condition.html">Terms and Condition</a></li>
+                </ul>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="mm-add-listing"><a href="add-listing.html" class="theme-btn btn-style-three"><span class="flaticon-plus-symbol"></span>Add Listing</a></li>
             </ul>
@@ -70,8 +42,8 @@ document.getElementById("header").innerHTML = `
             <!-- Login/Register -->
             <div class="login-box"> 
                 <span class="flaticon-user"></span> 
-                <a href="login.html" class="call-modal">Login</a> or 
-                <a href="register.html" class="call-modal">Register </a>
+                <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html" class="call-modal">Sign out</a> 
+               
             </div>
         </div>
     </div>
