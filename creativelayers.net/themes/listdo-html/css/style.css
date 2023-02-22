@@ -2366,7 +2366,7 @@ input:checked+.slider:before {
 
 .preloader:before {
   position: absolute;
-  top: 60%;
+  top: 0%;
   left: 0;
   right: 0;
   width: 150px;
@@ -3741,9 +3741,9 @@ section hr {
 }
 
 .mm-panels {
-  --mm-color-background: #021f4a;
+  --mm-color-background: #8c7af4;
   --mm-color-text-dimmed: #ffffff;
-  --mm-color-border: rgba(255, 255, 255, 0.1);
+  --mm-color-border: rgba(139, 30, 30, 0.1);
   --mm-listitem-size: 50px;
 }
 
@@ -3762,7 +3762,7 @@ section hr {
   text-indent: 0;
   display: block;
   margin-top: -10px;
-  background-color: rgba(255, 167, 55, 0.8);
+  background-color: #8e5fe4;
   height: 20px;
   width: 20px;
   text-align: center;
@@ -3782,7 +3782,7 @@ section hr {
   display: block;
   height: 30px;
   width: 30px;
-  border: 2px solid rgba(255, 255, 255, .15);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
 }
 
@@ -3797,10 +3797,10 @@ section hr {
   width: auto;
   min-width: auto;
   flex: 0 0 auto;
-  color: #ffa737 !important;
-  border-radius: 50px;
+  color: white !important;
+  border-radius: 70px;
   line-height: 25px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .mm-add-listing .theme-btn span {
