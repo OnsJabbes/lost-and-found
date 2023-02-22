@@ -11,6 +11,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="./notification/css/style.css">
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -34,559 +35,561 @@
 
         <!-- Main Header-->
         <header class="main-header header-style-four">
-            <!-- Main Header-->
-            <header class="main-header header-style-four">
-                <!-- Main box -->
-                <div class="main-box">
-                    <div class="logo-box">
-                        <div class="logo"><a href="index.html"><img src="images/logo-3.png" width="40" height="0" alt=""
-                                    title=""></a></div>
-                    </div>
+            <!-- Main box -->
+            <div class="main-box">
+                <div class="logo-box">
+                    <div class="logo"><a href="index.html"><img src="images/logo-3.png" width="60" height="0" alt=""
+                                title=""></a></div>
+                </div>
 
-                    <!--Nav Box-->
-                    <div class="nav-outer">
-                        <nav class="nav main-menu">
-                            <ul class="navigation" id="navbar">
-                                <li class="current dropdown">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <span><a href="listing-layout-2.html">items</a></span>
-                                </li>
-                                <li>
-                                    <span><a href="dashboard-profile.html">Profil</a></span>
-                                </li>
+                <!--Nav Box-->
+                <div class="nav-outer">
+                    <nav class="nav main-menu">
+                        <ul class="navigation" id="navbar">
+                            <li class="current dropdown">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <span><a href="listing-layout-2.html">items</a></span>
+                            </li>
+                            <li>
+                                <span><a href="dashboard-profile.html">Profil</a></span>
+                            </li>
 
 
-                                <li class="dropdown">
-                                    <span><a href="about-us.html">About Us</a></span>
-                                    <ul>
-                                        <li><a href="how-it-works.html">How It Works</a></li>
-                                        <li><a href="terms-and-condition.html">Terms and Condition</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="mm-add-listing"><a href="add-listing.html"
-                                        class="theme-btn btn-style-three"><span class="flaticon-plus-symbol"></span>Add
-                                        Post</a></li>
-                            </ul>
+                            <li class="dropdown">
+                                <span><a href="about-us.html">About Us</a></span>
+                                <ul>
+                                    <li><a href="how-it-works.html">How It Works</a></li>
+                                    <li><a href="terms-and-condition.html">Terms and Condition</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li class="mm-add-listing"><a href="add-listing.html"
+                                    class="theme-btn btn-style-three"><span class="flaticon-plus-symbol"></span>Add
+                                    Post</a></li>
+                        </ul>
+                    </nav>
+                    <!-- Main Menu End-->
+
+                    <div class="outer-box">
+                        <!-- Add Listing -->
+                        <a href="add-listing.html" class="add-listing"> <span class="flaticon-plus-symbol"></span> Add
+                            Post</a>
+
+                        <!-- notification -->
+
+
+                        <nav>
+                            <div class="icon">
+                                <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
+                                    <span>10</span></a>
+                            </div>
                         </nav>
-                        <!-- Main Menu End-->
 
-                        <div class="outer-box">
-                            <!-- Add Listing -->
-                            <a href="add-listing.html" class="add-listing"> <span class="flaticon-plus-symbol"></span>
-                                Add
-                                Post</a>
 
-                            <!-- notification -->
+                        <!-- notification End -->
 
-                            <!DOCTYPE html>
-                            <html lang="en">
 
-                            <head>
-                                <meta charset="UTF-8">
-                                <title>Notification</title>
-                                <link rel="stylesheet" href="./notification/css/style.css">
-                            </head>
 
-                            <body>
-                                <nav>
-                                    <div class="icon">
-                                        <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
-                                            <span>10</span></a>
+                        <!-- Logout-->
+                        <div class="login-box">
+                            <span class="flaticon-user"></span>
+                            <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Header -->
+            <div class="mobile-header">
+                <div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+
+                <!--Nav Box-->
+                <div class="nav-outer clearfix">
+
+
+                    <div class="outer-box">
+                        <!-- notification -->
+
+
+                        <nav>
+                            <div class="icon col-lg-4 col-md-6 col-sm-12">
+                                <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
+                                    <span>10</span></a>
+                            </div>
+                        </nav>
+
+
+                        <!-- notification End -->
+
+
+                        <!-- Search Btn -->
+                        <div class="search-box">
+                            <button class="search-btn mobile-search-btn"><i
+                                    class="flaticon-magnifying-glass"></i></button>
+                        </div>
+
+
+
+
+                        <!-- Logout -->
+                        <div class="login-box">
+                            <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html"><span
+                                    class="flaticon-user"></span></a>
+                        </div>
+                        <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span
+                                class="fa fa-bars"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="nav-mobile"></div>
+
+            <!-- Header Search -->
+            <div class="search-popup">
+                <span class="search-back-drop"></span>
+
+                <div class="search-inner">
+                    <button class="close-search"><span class="fa fa-times"></span></button>
+                    <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
+                        <div class="form-group">
+                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
+                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Header Search -->
+
+
+        </header>
+        <!--End Main Header -->
+
+        <!-- Terms And Conditions -->
+        <section class="terms-and-condition">
+            <div class="auto-container">
+                <div class="tnc-tabs tabs-box">
+                    <div class="row">
+                        <div class="column col-xl-3 col-lg-4 col-md-12 col-sm-12">
+
+                            <div class="ls-widget">
+                                <div class="widget-title">
+                                    <h4>Navigation</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <!--Tab Btns-->
+                                    <ul class="tab-buttons">
+                                        <li data-tab="#tab-a" class="tab-btn">Welcome Text</li>
+                                        <li data-tab="#tab-b" class="tab-btn">Our Terms</li>
+                                        <li data-tab="#tab-c" class="tab-btn">Conditions</li>
+                                        <li data-tab="#tab-d" class="tab-btn active-btn">Your Privacy</li>
+                                        <li data-tab="#tab-e" class="tab-btn">Informations We Collect</li>
+                                        <li data-tab="#tab-f" class="tab-btn">Security</li>
+                                        <li data-tab="#tab-g" class="tab-btn">Privacy Policy Update</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column col-xl-9 col-lg-8 col-md-12 col-sm-12">
+                            <!--Tabs Container-->
+                            <div class="tabs-content">
+                                <!--Tab-->
+                                <div class="tab" id="tab-a">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Welcome Text</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
+
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
+
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
+
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
+
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+                                        </div>
                                     </div>
-                                </nav>
-                            </body>
+                                </div>
 
-                            </html>
+                                <!--Tab-->
+                                <div class="tab" id="tab-b">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Our Terms</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
 
-                            <!-- notification End -->
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
 
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
 
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
 
-                            <!-- Logout-->
-                            <div class="login-box">
-                                <span class="flaticon-user"></span>
-                                <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html">Logout</a>
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tab-->
+                                <div class="tab" id="tab-c">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Conditions</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
+
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
+
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
+
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
+
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tab-->
+                                <div class="tab active-tab" id="tab-d">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Privacy Policy</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
+
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
+
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
+
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
+
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tab-->
+                                <div class="tab" id="tab-e">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Informations We Collect</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
+
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
+
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
+
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
+
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tab-->
+                                <div class="tab" id="tab-f">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Security</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
+
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
+
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
+
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
+
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tab-->
+                                <div class="tab" id="tab-g">
+                                    <div class="ls-widget">
+                                        <div class="widget-title">
+                                            <h4>Privacy Policy Update</h4>
+                                        </div>
+                                        <div class="widget-content">
+                                            <p>The terms and conditions for a lost and found web app may vary
+                                                depending on the specific app and its policies. However, some
+                                                general terms and conditions that you might find in such an app
+                                                could include: </p></br>
+
+                                            <p>* Reporting Lost Items: Users are required to report any lost items
+                                                immediately after they discover that they have lost it.</br>
+
+                                                * Found Items: Users are required to report found items immediately
+                                                to
+                                                the app owner.</br>
+
+                                                * Retrieval: The app owner is not responsible for the retrieval of
+                                                lost items.</br>
+
+                                                * Storage: The app owner may store lost items until they are claimed
+                                                by their rightful owner. If the items are not claimed within a
+                                                certain period of time, they may be donated to charity.</br>
+
+                                                * Verification: Users may be required to provide proof of ownership
+                                                before they can claim lost items.</br>
+
+                                                * Fees: The app owner may charge a fee for the storage and retrieval
+                                                of lost items.</br>
+
+                                                * Liability: The app owner is not liable for any damages that may
+                                                occur during the storage and retrieval of lost items.</br>
+
+                                                * Privacy: The app owner may collect personal information from
+                                                users,
+                                                but will not share or sell that information to third parties.</br>
+
+                                                * Termination: The app owner may terminate the account of any user
+                                                who
+                                                violates the terms and conditions.</br>
+
+                                                * Changes: The app owner may modify the terms and conditions at any
+                                                time, and users will be notified of any changes.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- End Terms And Conditions -->
 
-                <!-- Mobile Header -->
-                <div class="mobile-header">
-                    <div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+        <!-- Main Footer -->
+        <footer class="main-footer style-two">
+            <!-- Footer Upper -->
+            <div class="footer-upper">
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Listings</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
 
-                    <!--Nav Box-->
-                    <div class="nav-outer clearfix">
-
-                        <div class="outer-box">
-                            <!-- Search Btn -->
-                            <div class="search-box">
-                                <button class="search-btn mobile-search-btn"><i
-                                        class="flaticon-magnifying-glass"></i></button>
-                            </div>
-
-
-
-                            <!-- Logout -->
-                            <div class="login-box">
-                                <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html"><span
-                                        class="flaticon-user"></span></a>
-                            </div>
-                            <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span
-                                    class="fa fa-bars"></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile Nav -->
-                <div id="nav-mobile"></div>
-
-                <!-- Header Search -->
-                <div class="search-popup">
-                    <span class="search-back-drop"></span>
-
-                    <div class="search-inner">
-                        <button class="close-search"><span class="fa fa-times"></span></button>
-                        <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
-                            <div class="form-group">
-                                <input type="search" name="search-field" value="" placeholder="Search..." required="">
-                                <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- End Header Search -->
-
-
-            </header>
-            <!--End Main Header -->
-
-            <!-- Terms And Conditions -->
-            <section class="terms-and-condition">
+            <!-- Footer Content -->
+            <div class="footer-content">
                 <div class="auto-container">
-                    <div class="tnc-tabs tabs-box">
-                        <div class="row">
-                            <div class="column col-xl-3 col-lg-4 col-md-12 col-sm-12">
-
-                                <div class="ls-widget">
-                                    <div class="widget-title">
-                                        <h4>Navigation</h4>
-                                    </div>
-                                    <div class="widget-content">
-                                        <!--Tab Btns-->
-                                        <ul class="tab-buttons">
-                                            <li data-tab="#tab-a" class="tab-btn">Welcome Text</li>
-                                            <li data-tab="#tab-b" class="tab-btn">Our Terms</li>
-                                            <li data-tab="#tab-c" class="tab-btn">Conditions</li>
-                                            <li data-tab="#tab-d" class="tab-btn active-btn">Your Privacy</li>
-                                            <li data-tab="#tab-e" class="tab-btn">Informations We Collect</li>
-                                            <li data-tab="#tab-f" class="tab-btn">Security</li>
-                                            <li data-tab="#tab-g" class="tab-btn">Privacy Policy Update</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="column col-xl-9 col-lg-8 col-md-12 col-sm-12">
-                                <!--Tabs Container-->
-                                <div class="tabs-content">
-                                    <!--Tab-->
-                                    <div class="tab" id="tab-a">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Welcome Text</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Tab-->
-                                    <div class="tab" id="tab-b">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Our Terms</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Tab-->
-                                    <div class="tab" id="tab-c">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Conditions</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Tab-->
-                                    <div class="tab active-tab" id="tab-d">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Privacy Policy</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Tab-->
-                                    <div class="tab" id="tab-e">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Informations We Collect</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Tab-->
-                                    <div class="tab" id="tab-f">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Security</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Tab-->
-                                    <div class="tab" id="tab-g">
-                                        <div class="ls-widget">
-                                            <div class="widget-title">
-                                                <h4>Privacy Policy Update</h4>
-                                            </div>
-                                            <div class="widget-content">
-                                                <p>The terms and conditions for a lost and found web app may vary
-                                                    depending on the specific app and its policies. However, some
-                                                    general terms and conditions that you might find in such an app
-                                                    could include: </p></br>
-
-                                                <p>* Reporting Lost Items: Users are required to report any lost items
-                                                    immediately after they discover that they have lost it.</br>
-
-                                                    * Found Items: Users are required to report found items immediately
-                                                    to
-                                                    the app owner.</br>
-
-                                                    * Retrieval: The app owner is not responsible for the retrieval of
-                                                    lost items.</br>
-
-                                                    * Storage: The app owner may store lost items until they are claimed
-                                                    by their rightful owner. If the items are not claimed within a
-                                                    certain period of time, they may be donated to charity.</br>
-
-                                                    * Verification: Users may be required to provide proof of ownership
-                                                    before they can claim lost items.</br>
-
-                                                    * Fees: The app owner may charge a fee for the storage and retrieval
-                                                    of lost items.</br>
-
-                                                    * Liability: The app owner is not liable for any damages that may
-                                                    occur during the storage and retrieval of lost items.</br>
-
-                                                    * Privacy: The app owner may collect personal information from
-                                                    users,
-                                                    but will not share or sell that information to third parties.</br>
-
-                                                    * Termination: The app owner may terminate the account of any user
-                                                    who
-                                                    violates the terms and conditions.</br>
-
-                                                    * Changes: The app owner may modify the terms and conditions at any
-                                                    time, and users will be notified of any changes.</p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Terms And Conditions -->
-
-            <!-- Main Footer -->
-            <footer class="main-footer style-two">
-                <!-- Footer Upper -->
-                <div class="footer-upper">
-                    <ul class="footer-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Listings</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Contact</a></li>
+                    <ul class="social-icon-two">
+                        <li><a href="#"><span class="fab fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fab fa-pinterest"></span></a></li>
+                        <li><a href="#"><span class="fab fa-dribbble"></span></a></li>
+                        <li><a href="#"><span class="fab fa-google"></span></a></li>
+                    </ul>
+
+                    <ul class="copyright-text">
+                        <li>Copyright © 2019 Listdo</li>
+                        <li>New York, NY</li>
+                        <li><a href="#">+61 2 8236 9200</a></li>
                     </ul>
                 </div>
+            </div>
 
-                <!-- Footer Content -->
-                <div class="footer-content">
-                    <div class="auto-container">
-                        <ul class="social-icon-two">
-                            <li><a href="#"><span class="fab fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                            <li><a href="#"><span class="fab fa-pinterest"></span></a></li>
-                            <li><a href="#"><span class="fab fa-dribbble"></span></a></li>
-                            <li><a href="#"><span class="fab fa-google"></span></a></li>
-                        </ul>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="text">Proudly Listdo by CreativeLayers</div>
+            </div>
 
-                        <ul class="copyright-text">
-                            <li>Copyright © 2019 Listdo</li>
-                            <li>New York, NY</li>
-                            <li><a href="#">+61 2 8236 9200</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Footer Bottom -->
-                <div class="footer-bottom">
-                    <div class="text">Proudly Listdo by CreativeLayers</div>
-                </div>
-
-                <!-- Scroll To Top -->
-                <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-up"></span></div>
-            </footer>
-            <!-- End Footer -->
+            <!-- Scroll To Top -->
+            <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-up"></span></div>
+        </footer>
+        <!-- End Footer -->
 
     </div><!-- End Page Wrapper -->
 

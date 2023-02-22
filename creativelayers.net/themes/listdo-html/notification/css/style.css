@@ -25,7 +25,7 @@ body {
 .icon img {
 	display: inline-block;
 	width: 45px;
-	margin-top: 5px;
+	margin-top: 1px;
 }
 
 .icon:hover {
