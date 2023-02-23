@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- leaflet css -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+
+  <!-- markercluster  -->
+  <link rel="stylesheet" href="./dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="./dist/MarkerCluster.Default.css" />
+
+  <title>markers </title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0%;
+    }
+
+    #map {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+</body>
+
+</html>
+
+<!-- geojson data  -->
+<script src="./data.js"></script>
+
+<!-- leaflet js  -->
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+<!-- markercluster  -->
+<script src="./dist/leaflet.markercluster.js"></script>
+
+<script>
+  // Map initialization    
+  var map = L.map('map').setView([33.892166, 9.561555], 5);
+
+  //osm layer
+  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>contributors'
+  });
+  osm.addTo(map);
+
+  if (!navigator.geolocation) {
+    console.log("Your browser doesn't support geolocation feature!")
+  } else {
+    setInterval(() => {
+      navigator.geolocation.getCurrentPosition(getPosition)
+    }, 5000);
+  }
+
+  var marker, circle;
+
+  function getPosition(position) {
+    // console.log(position)
+    var lat = position.coords.latitude
+    var long = position.coords.longitude
+    var accuracy = position.coords.accuracy
+
+    if (marker) {
+      map.removeLayer(marker)
+    }
+
+    if (circle) {
+      map.removeLayer(circle)
+    }
+
+    marker = L.marker([lat, long])
+    circle = L.circle([lat, long], { radius: accuracy })
+
+    var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+
+
+    console.log("Your coordinate is: Lat: " + lat + " Long: " + long + " Accuracy: " + accuracy)
+  }
+
+  const geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 2,
+    opacity: 2,
+    fillOpacity: 0.9,
+  };
+
+  // loading geojson
+  const lightData = L.geoJSON(data, {
+    onEachFeature: function (feature, layer) {
+
+      const popupContent =
+        '<h3><a>IPHONE 13 <span class="icon icon-verified"></span></a></h3><div class="text">iphone 13 noir </div><ul class="info"><li><span class="flaticon-pin"></span> Monastir , stah jaber</li><li><span class="flaticon-phone-call"></span> +216 29 876 565 </li></ul>' +
+        '<a href="../trajet/trajet.html"><button > Direction </button></a>' +
+
+        "</td></tr>";
+
+      layer.bindPopup(popupContent);
+
+    },
+    pointToLayer: function (feature, latlng) {
+      return L.circleMarker(latlng, geojsonMarkerOptions);
+    },
+  });
+
+  const markers = L.markerClusterGroup().addLayer(lightData);
+
+  // marker clustering
+  map.addLayer(markers);
+</script>
