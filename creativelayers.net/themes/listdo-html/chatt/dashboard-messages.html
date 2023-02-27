@@ -8,13 +8,15 @@
     <title>Listdo | Just another HTML Template | Dashboard Messages</title>
 
     <!-- Stylesheets -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="./notification/css/style.css">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../notification/css/style.css">
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,8 +40,8 @@
             <!-- Main box -->
             <div class="main-box">
                 <div class="logo-box">
-                    <div class="logo"><a href="index.html"><img src="images/logo-3.png" width="60" height="0" alt=""
-                                title=""></a></div>
+                    <div class="logo"><a href="../index.html"><img src="../images/logo-3.png" width="60" height="0"
+                                alt="" title=""></a></div>
                 </div>
 
                 <!--Nav Box-->
@@ -47,25 +49,25 @@
                     <nav class="nav main-menu">
                         <ul class="navigation" id="navbar">
                             <li class="current dropdown">
-                                <a href="index.html">Home</a>
+                                <a href="../index.html">Home</a>
                             </li>
                             <li>
-                                <span><a href="listing-layout-2.html">items</a></span>
+                                <span><a href="../listing-layout-2.html">items</a></span>
                             </li>
                             <li>
-                                <span><a href="dashboard-profile.html">Profil</a></span>
+                                <span><a href="../dashboard-profile.html">Profil</a></span>
                             </li>
 
 
                             <li class="dropdown">
-                                <span><a href="about-us.html">About Us</a></span>
+                                <span><a href="../about-us.html">About Us</a></span>
                                 <ul>
-                                    <li><a href="how-it-works.html">How It Works</a></li>
-                                    <li><a href="terms-and-condition.html">Terms and Condition</a></li>
+                                    <li><a href="../how-it-works.html">How It Works</a></li>
+                                    <li><a href="../terms-and-condition.html">Terms and Condition</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="mm-add-listing"><a href="add-listing.html"
+                            <li><a href="../contact.html">Contact</a></li>
+                            <li class="mm-add-listing"><a href="../add-listing.html"
                                     class="theme-btn btn-style-three"><span class="flaticon-plus-symbol"></span>Add
                                     Post</a></li>
                         </ul>
@@ -74,7 +76,8 @@
 
                     <div class="outer-box">
                         <!-- Add Listing -->
-                        <a href="add-listing.html" class="add-listing"> <span class="flaticon-plus-symbol"></span> Add
+                        <a href="../add-listing.html" class="add-listing"> <span class="flaticon-plus-symbol"></span>
+                            Add
                             Post</a>
 
                         <!-- notification -->
@@ -82,7 +85,7 @@
 
                         <nav>
                             <div class="icon">
-                                <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
+                                <a href="../dashboared-reviews.html"><img src="../notification/img/bell.png" alt="">
                                     <span>10</span></a>
                             </div>
                         </nav>
@@ -95,7 +98,7 @@
                         <!-- Logout-->
                         <div class="login-box">
                             <span class="flaticon-user"></span>
-                            <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html">Logout</a>
+                            <a href="../Sliding-Sign-In-Sign-Up-Form-master/login.html">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +106,7 @@
 
             <!-- Mobile Header -->
             <div class="mobile-header">
-                <div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+                <div class="logo"><a href="../index.html"><img src="../images/logo-3.png" alt="" title=""></a></div>
 
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -115,7 +118,7 @@
 
                         <nav>
                             <div class="icon col-lg-4 col-md-6 col-sm-12">
-                                <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
+                                <a href="../dashboared-reviews.html"><img src="../notification/img/bell.png" alt="">
                                     <span>10</span></a>
                             </div>
                         </nav>
@@ -135,7 +138,7 @@
 
                         <!-- Logout -->
                         <div class="login-box">
-                            <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html"><span
+                            <a href="../Sliding-Sign-In-Sign-Up-Form-master/login.html"><span
                                     class="flaticon-user"></span></a>
                         </div>
                         <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span
@@ -175,18 +178,18 @@
             <div class="sidebar-inner">
                 <div class="sidebar-header">
                     <div class="user-box">
-                        <figure class="user-image"><img src="images/resource/user-img.jpg" alt=""></figure>
+                        <figure class="user-image"><img src="../images/resource/user-img.jpg" alt=""></figure>
                         <h4 class="user-name">Hello, Ali!</h4>
                     </div>
                 </div>
 
                 <ul class="navigation">
-                    <li><a href="dashboard-profile.html"><i class="la la-user"></i>Profile</a></li>
-                    <li><a href="dashboard-listing.html"><i class="la la-layer-group"></i>Listings</a></li>
-                    <li class="active"><a href="dashboard-messages.html"><i class="la la-envelope"></i> Messages </a>
+                    <li><a href="../dashboard-profile.html"><i class="la la-user"></i>Profile</a></li>
+                    <li><a href="../dashboard-listing.html"><i class="la la-layer-group"></i>Listings</a></li>
+                    <li class="active"><a href="../dashboard-messages.html"><i class="la la-envelope"></i> Messages </a>
                     </li>
 
-                    <li><a href="index.html"><i class="la la-sign-out"></i>Logout</a></li>
+                    <li><a href="../index.html"><i class="la la-sign-out"></i>Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -217,14 +220,11 @@
                                                 <a href="#">
                                                     <div class="d-flex bd-highlight">
                                                         <div class="img_cont">
-                                                            <img src="images/resource/chat-thumb-5.jpg"
+                                                            <img src="../images/resource/chat-thumb-5.jpg"
                                                                 class="rounded-circle user_img" alt="">
                                                             <span class="online_icon"></span>
                                                         </div>
-                                                        <div class="user_info">
-                                                            <span>Joanne Davies</span>
-                                                            <p>Let’s go!</p>
-                                                        </div>
+
                                                     </div>
                                                 </a>
                                             </li>
@@ -238,73 +238,33 @@
                                     <div class="card-header msg_head">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="images/resource/chat-thumb-5.jpg" alt=""
+                                                <img src="../images/resource/chat-thumb-5.jpg" alt=""
                                                     class="rounded-circle user_img">
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
-                                                <span>Joanne Davies</span>
-                                                <p>was online today at 11:43</p>
+                                                <span>user name</span>
+
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-body msg_card_body">
-                                        <div class="chat_history">November 5, 2018</div>
-                                        <div class="d-flex justify-content-start mb-3">
-                                            <div class="img_cont_msg">
-                                                <img src="images/resource/chat-thumb-5.jpg" alt=""
-                                                    class="rounded-circle user_img_msg">
-                                            </div>
-                                            <div class="msg_cotainer">
-                                                <span class="msg_time">Today, 10:31</span>
-                                                Hello, John!
-                                            </div>
-                                        </div>
 
-                                        <div class="d-flex justify-content-start mb-3">
-                                            <div class="img_cont_msg">
-                                                <img src="images/resource/chat-thumb-5.jpg" alt=""
-                                                    class="rounded-circle user_img_msg">
-                                            </div>
-                                            <div class="msg_cotainer">
-                                                <span class="msg_time">Today, 10:31</span>
-                                                simply dummy text of the printing and <br>typesetting industry. Lorem
-                                                Ipsum has <br>been the industry's
-                                            </div>
-                                        </div>
 
-                                        <div class="d-flex justify-content-end mb-3">
-                                            <div class="msg_cotainer_send">
-                                                <span class="msg_time_send">Today, 10:35</span>
-                                                Are we meeting today?
-                                            </div>
-                                        </div>
+                                    <div id="message-container">
 
-                                        <div class="d-flex justify-content-end mb-3">
-                                            <div class="msg_cotainer_send">
-                                                <span class="msg_time_send">Today, 10:35</span>
-                                                The project finally complete! Let's go to!
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex justify-content-start mb-3">
-                                            <div class="img_cont_msg">
-                                                <img src="images/resource/chat-thumb-5.jpg"
-                                                    class="rounded-circle user_img_msg" alt="">
-                                            </div>
-                                            <div class="msg_cotainer">
-                                                <span class="msg_time">Today, 10:45</span>
-                                                Let's go!
-                                            </div>
-                                        </div>
                                     </div>
+
+
 
                                     <div class="card-footer">
                                         <div class="form-group mb-0">
-                                            <textarea class="form-control type_msg"
-                                                placeholder="Type your message..."></textarea>
-                                            <button type="button" class="theme-btn btn-style-two submit-btn">Send
-                                                Message</button>
+                                            <form id="send-container">
+                                                <input class="form-control type_msg" type="text" id="message-input">
+                                                <button type="submit" class="theme-btn btn-style-two submit-btn"
+                                                    id="send-button">Send
+                                                    Message</button>
+
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -319,20 +279,38 @@
     </div><!-- End Page Wrapper -->
 
 
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/chosen.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.fancybox.js"></script>
-    <script src="js/jquery.modal.min.js"></script>
-    <script src="js/jquery.hideseek.min.js"></script>
-    <script src="js/mmenu.polyfills.js"></script>
-    <script src="js/mmenu.js"></script>
-    <script src="js/appear.js"></script>
-    <script src="js/owl.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/chosen.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.fancybox.js"></script>
+    <script src="../js/jquery.modal.min.js"></script>
+    <script src="../js/jquery.hideseek.min.js"></script>
+    <script src="../js/mmenu.polyfills.js"></script>
+    <script src="../js/mmenu.js"></script>
+    <script src="../js/appear.js"></script>
+    <script src="../js/owl.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        #message-container {
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        #message-container div {
+            background-color: #e2e0ee;
+            padding: 5px 10px 10px 30px;
+            border-radius: 5px;
+        }
+
+        #message-container div:nth-child(2n) {
+            background-color: e2e0ee;
+            border-radius: 5px;
+            padding: 5px 10px 10px 30px;
+        }
+    </style>
 </body>
 
 <!-- Mirrored from creativelayers.net/themes/listdo-html/dashboard-messages.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:29:57 GMT -->
