@@ -1,13 +1,16 @@
 const express = require('express');
+var cors = require('cors')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const itemRoute = require('./routes/item');
 
-
+// create express app
 const app = express();
+app.use (cors()) ; 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 app.use(express.static('public'));
 app.use('/', itemRoute);
 
@@ -15,16 +18,10 @@ app.use('/', itemRoute);
 
 // Connect to MongoDB
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://mayssa:mayssa@cluster0.ckpide7.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect('mongodb+srv://ons:24102001@cluster0.2izjmij.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }
 )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
-
-  app.listen(5000, () => {
-    console.log('Server started on port 5000');
-  });
-
-
 
 
 
@@ -37,3 +34,6 @@ app.use('/', function (req, res, next) {
 });
 //---------fin link the template with server---------//
 
+app.listen(5000, () => {
+  console.log('Server started on port 5000');
+});
