@@ -234,57 +234,22 @@
                     <div class="content-column col-lg-8 col-md-12 col-sm-12">
                         <div class="ls-outer">
                             <button type="button" class="theme-btn btn-style-two toggle-filters">Show Filters</button>
-
+                            
                             <!-- ls Switcher -->
                             <div class="ls-switcher">
                                 <div class="showing-result">
                                     <div class="arrange">
                                         <a href="#"><span class="icon flaticon-setup"></span></a>
                                     </div>
-                                    <div class="text">7 Results Found (Showing 1-25)</div>
+
                                 </div>
 
                             </div>
 
                             <!-- Listing Block Five -->
                             <div class="listing-block-five">
-                                <div class="inner-box">
-                                    <div class="image-box">
-                                        <figure class="image"><img src="images/resource/listing/1-1.jpg" alt="">
-                                        </figure>
-
-                                    </div>
-
-                                    <div class="content-box">
-                                        <div class="upper-box">
-                                            <div class="user-thumb"><img src="images/resource/user-thumb-1.jpg"
-                                                    alt="" /></div>
-
-                                            <h3><a>IPHONE 13 <span class="icon icon-verified"></span></a></h3>
-                                            <div class="text">iphone 13 noir </div>
-                                            <ul class="info">
-                                                <li><span class="flaticon-pin"></span> Monastir , stah jaber</li>
-                                                <li><span class="flaticon-phone-call"></span> +216 29 876 565 </li>
-                                            </ul>
-                                        </div>
-                                        <div class="bottom-box">
-                                            <div class="places">
-                                                <div class="place"><a href="./chatt/dashboard-messages.html"><span
-                                                            class="icon flaticon-up"></span></a>
-                                                    messsage
-                                                </div>
-                                                <div class="place"><a href="./map_marker/map.html"><span
-                                                            class="icon flaticon-compass"></span></a>
-                                                    Get Location
-                                                </div>
 
 
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
                             </div>
                             <!-- Pagination -->
 
@@ -328,6 +293,7 @@
     </div><!-- End Page Wrapper -->
 
 
+
     <script src="js/jquery.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/chosen.min.js"></script>
@@ -346,6 +312,53 @@
     <script src="js/infobox.min.js"></script>
     <script src="js/markerclusterer.js"></script>
     <script src="js/maps.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            $.get('/items', (data) => {
+                data.forEach((item) => {
+                    $('.listing-block-five').append(`
+                    <div class="inner-box">
+                    <div class="image-box">
+                         <figure class="image"><img src="`+ item.image + `" alt=""></figure>
+                    </div>
+                    <div class="content-box">
+                                    <div class="upper-box">
+                                            
+
+                                            <h3><a>`+ item.title + ` <span class="icon icon-verified"></span></a></h3>
+                                            <div class="text">`+ item.description + ` </div>
+                                                <ul class="info">
+                                                    <li><span class="flaticon-pin"></span> `+ item.Address + `</li>
+                                                    <li><span class="flaticon-phone-call"></span> `+ item.phone + ` </li>
+                                                </ul>
+                                            </div>
+                                        <div class="bottom-box">
+                                            <div class="places">
+                                                <div class="place"><a href="./chatt/dashboard-messages.html"><span
+                                                            class="icon flaticon-up"></span></a>
+                                                    messsage
+                                                </div>
+                                                <div class="place"><a href="./map_marker/map.html"><span
+                                                            class="icon flaticon-compass"></span></a>
+                                                    Get Location
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+
+                    `)
+
+                })
+            }).fail((err) => {
+                console.log(err);
+                alert('Error reading items');
+            });
+        });
+    </script>
 </body>
 
 <!-- Mirrored from creativelayers.net/themes/listdo-html/listing-layout-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:30:03 GMT -->

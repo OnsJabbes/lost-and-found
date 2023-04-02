@@ -4,6 +4,7 @@ const multer = require('multer');
 const Item = require('../models/item');
 const cloudinary = require('cloudinary').v2;
 const path = require('path');
+const mongoose = require('mongoose');
 
 
 // Configuration 
@@ -75,5 +76,61 @@ router.post('/', upload.single('image'), function(req, res) {
     });
   });
 });
+
+// Handle PUT requests to update an item
+router.post('/update/:id', (req, res) => {
+  const itemId = req.params.id;
+  const update = req.body;
+
+  Item.findByIdAndUpdate(itemId, update, { new: true })
+    .then(updatedItem => {
+      // Rediriger l'utilisateur vers une page différente après la mise à jour
+      res.redirect('/dashboard-listing.html');
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: 'Error updating item' });
+    });
+});
+
+
+
+// Handle DELETE requests to delete an item
+router.post('/delete/:id', (req, res) => {
+  
+  
+  const itemId = req.params.id;
+
+  Item.findByIdAndDelete(itemId)
+    .then(() => {
+      res.redirect('back');
+      
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: 'Error deleting item' });
+    });
+});
+
+router.get('/items/:id', (req, res) => {
+  const id = req.params.id;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: 'Invalid ID' });
+  }
+  Item.findOne({ _id: id })
+    .then(item => {
+      if (!item) {
+        return res.status(404).json({ error: 'Item not found' });
+      }
+      res.json(item);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: 'Error reading item' });
+    });
+});
+
+
+
 
 module.exports = router;
