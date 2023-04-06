@@ -93,35 +93,36 @@
                               <%= error.msg %>              
                               <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                  
+                
                               </button>
                             </div>
                                
                            <% }); %>
                         <% } %>
-                  
-                        <% if (success_msg != '') { %>
+                
+                        <% if (typeof success_msg != 'undefined') { %>
                           <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <%= success_msg %>              
                             <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
-                  
+                
                             </button>
                           </div>
-                  
+                
                         <% } %>
-                  
-                        <% if (error != '') { %>
+                        
+                        <% if (typeof error != 'undefined') { %>
                           <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <%= error %>              
                             <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
-                  
+                
                             </button>
                           </div>
-                  
+                
                         <% } %>
-                        <form method="POST" >
+
+                        <form method="POST" action="/users/verification">
                           <div class="form-group">
                             <label for="code">please check your mail to verify your account ! thank you</label>
                             <input type="text"
@@ -135,7 +136,7 @@
                                    
                                    required/>
                           </div>
-                          <a href="/users/login">
+                          <a href="/login">
                             <button type="button"   class="theme-btn btn-style-one bg-purple">
                               Continuer
                             </button>

@@ -137,7 +137,7 @@ router.get('/verification', (req, res) => res.render('verification.html'));
 
 //verif 
 router.post('/users/verification', async (req, res) => {
- try {
+ 
 		const { email, code } = req.body;
 		let errors = [];
       	console.log(email);
@@ -175,13 +175,7 @@ router.post('/users/verification', async (req, res) => {
 						})	
     }
 
-	} catch (error) {
-		//error code verif
-		res.json({
-			status: "FAILED",
-			message: 'erreur '
-		});
-	}
+	
 });
 
 // Login Page
