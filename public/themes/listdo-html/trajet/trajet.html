@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Geolocation</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="map" style="width:100%; height: 100vh"></div>
+	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+	<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+	
+
+
+	<script>
+
+		var map = L.map('map').setView([33.7931605 , 9.5607653], 5);
+	
+		mapLink = "<a href='http://openstreetmap.org'>OpenStreetMap</a>";
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'Leaflet &copy; ' + mapLink + ', contribution', maxZoom: 18 }).addTo(map);
+
+		if (!navigator.geolocation) {
+        console.log("Your browser doesn't support geolocation feature!")
+        } else {
+        setInterval(() => {
+            navigator.geolocation.getCurrentPosition(getPosition)
+        }, 5000);
+        }
+
+
+		var marker, circle;
+
+        function getPosition(position) {
+	     // console.log(position)
+	      var lat = position.coords.latitude
+	      var long = position.coords.longitude
+	      var accuracy = position.coords.accuracy
+
+	     if (marker) {
+		 map.removeLayer(marker)
+	     }
+
+	     if (circle) {
+		  map.removeLayer(circle)
+	     }
+
+	      marker = L.marker([lat, long])
+	      circle = L.circle([lat, long], { radius: accuracy })
+
+	     var featureGroup = L.featureGroup([marker, circle]).addTo(map) ; 
+	 
+		 
+		 var newMarker = L.marker([35.82539  , 10.63699]).addTo(map) ; 
+
+        
+			
+		
+
+			
+			L.Routing.control({
+				
+				waypoints: [
+					L.latLng(position.coords.latitude  , position.coords.longitude ),
+					L.latLng(35.82539  , 10.63699)
+				]
+			}).on('routesfound', function (e) {
+				var routes = e.routes;
+				console.log(routes);
+
+				e.routes[0].coordinates.forEach(function (coord, index) {
+					setTimeout(function () {
+						marker.setLatLng([position.coords.latitude  , position.coords.longitude]);
+					}, 100 * index)
+				})
+
+			}).addTo(map);
+			
+		 
+	}
+
+	</script>
+
+
+</body>
+
+</html>

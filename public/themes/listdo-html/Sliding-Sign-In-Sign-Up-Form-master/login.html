@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/stylel.css" />
+  <title>Sign in & Sign up Form</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form onsubmit="return false" class="sign-in-form" action="/login" method="POST" >
+          <h2 class="title">Sign in </h2>
+        
+          <div class="input-field">
+
+            <i class="fas fa-user"></i>
+            
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter Email"
+            />
+                  
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Enter Password"
+            />
+          </div>
+
+          <input type="submit" value="Login" class="btn btn-primary btn-block solid" onclick="location.replace('../index.html')" />
+          
+        </form>
+        <form class="sign-up-form" action="/register" method="POST" >
+          <% if(typeof errors != 'undefined') { %>
+            <% errors.forEach(function(error) { %>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%= error.msg %>              
+                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+  
+                </button>
+              </div>
+                 
+             <% }); %>
+          <% } %>
+  
+          <% if (typeof success_msg != 'undefined') { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= success_msg %>              
+              <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+            </div>
+  
+          <% } %>
+          
+          <% if (typeof error != 'undefined') { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= error %>              
+              <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+            </div>
+  
+          <% } %>
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter Name"
+              
+            />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            
+          />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Create Password"
+            
+          />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input
+            type="password"
+            id="password2"
+            name="password2"
+            class="form-control"
+            placeholder="Confirm Password"
+           
+           />   
+           </div>
+          <input type="submit" class="btn btn-primary btn-block register-btn" value="Sign up" onclick="location.replace('../index.html')" />
+          
+        </form>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here ?</h3>
+          <p>
+            welcome to our lost and found application , hope we can help you to find what you have lost in here .
+          </p>
+          <button class="btn transparent  btn-primary btn-block" id="sign-up-btn">
+            Sign up
+          </button>
+        </div>
+        <img src="/img/log.gif" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us ?</h3>
+          <p>
+            please enter your email and password ... thank you ! 
+          </p>
+          <button class="btn transparent btn-primary btn-block register-btn" id="sign-in-btn">
+            Sign in
+          </button>
+        </div>
+        <img src="/img/register.gif" class="image" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/appl.js"></script>
+</body>
+
+</html>

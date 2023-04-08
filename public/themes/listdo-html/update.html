@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from creativelayers.net/themes/listdo-html/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:30:41 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Listdo | Just another HTML Template | Add Listing </title>
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="./notification/css/style.css">
+    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'>
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!-- Header Span -->
+        <span class="header-span"></span>
+
+        <!-- Main Header-->
+        <header class="main-header header-style-four">
+            <!-- Main box -->
+            <div class="main-box">
+                <div class="logo-box">
+                    <div class="logo"><a href="index.html"><img src="images/logo-3.png" width="60" height="0" alt=""
+                                title=""></a></div>
+                </div>
+
+                <!--Nav Box-->
+                <div class="nav-outer">
+                    <nav class="nav main-menu">
+                        <ul class="navigation" id="navbar">
+                            <li class="current dropdown">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <span><a href="listing-layout-2.html">items</a></span>
+                            </li>
+                            <li>
+                                <span><a href="dashboard-profile.html">Profil</a></span>
+                            </li>
+
+
+                            <li class="dropdown">
+                                <span><a href="about-us.html">About Us</a></span>
+                                <ul>
+                                    <li><a href="how-it-works.html">How It Works</a></li>
+                                    <li><a href="terms-and-condition.html">Terms and Condition</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li class="mm-add-listing"><a href="add-listing.html"
+                                    class="theme-btn btn-style-three"><span class="flaticon-plus-symbol"></span>Add
+                                    Post</a></li>
+                        </ul>
+                    </nav>
+                    <!-- Main Menu End-->
+
+                    <div class="outer-box">
+                        <!-- Add Listing -->
+                        <a href="add-listing.html" class="add-listing"> <span class="flaticon-plus-symbol"></span> Add
+                            Post</a>
+
+                        <!-- notification -->
+
+
+                        <nav>
+                            <div class="icon">
+                                <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
+                                    <span>10</span></a>
+                            </div>
+                        </nav>
+
+
+                        <!-- notification End -->
+
+
+
+                        <!-- Logout-->
+                        <div class="login-box">
+                            <span class="flaticon-user"></span>
+                            <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Header -->
+            <div class="mobile-header">
+                <div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+
+                <!--Nav Box-->
+                <div class="nav-outer clearfix">
+
+
+                    <div class="outer-box">
+                        <!-- notification -->
+
+
+                        <nav>
+                            <div class="icon col-lg-4 col-md-6 col-sm-12">
+                                <a href="dashboared-reviews.html"><img src="./notification/img/bell.png" alt="">
+                                    <span>10</span></a>
+                            </div>
+                        </nav>
+
+
+                        <!-- notification End -->
+
+
+                        <!-- Search Btn -->
+                        <div class="search-box">
+                            <button class="search-btn mobile-search-btn"><i
+                                    class="flaticon-magnifying-glass"></i></button>
+                        </div>
+
+
+
+
+                        <!-- Logout -->
+                        <div class="login-box">
+                            <a href="./Sliding-Sign-In-Sign-Up-Form-master/login.html"><span
+                                    class="flaticon-user"></span></a>
+                        </div>
+                        <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span
+                                class="fa fa-bars"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="nav-mobile"></div>
+
+            <!-- Header Search -->
+            <div class="search-popup">
+                <span class="search-back-drop"></span>
+
+                <div class="search-inner">
+                    <button class="close-search"><span class="fa fa-times"></span></button>
+                    <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
+                        <div class="form-group">
+                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
+                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Header Search -->
+
+
+        </header>
+        <!--End Main Header -->
+        <!-- Add Listing -->
+        <section class="add-listing-section">
+
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Sidebar Column -->
+                    <div class="sidebar-column sidebar-side sticky-container col-lg-4 col-md-12 col-sm-12">
+                        <aside class="sidebar theiaStickySidebar">
+                            <div class="sticky-sidebar">
+                                <ul class="listing-content-list">
+                                    <li data-target="#General" class="active"><span class="icon flaticon-house"></span>
+                                        General</li>
+                                    <li data-target="#Images"><span class="icon flaticon-gallery"></span> Images</li>
+                                    <li data-target="#Contact-Information"><span
+                                            class="icon flaticon-phone-call-1"></span> Contact Information</li>
+                                    <li data-target="#Location"><span class="icon flaticon-pin"></span> Location</li>
+                                    <li data-target="#Listing-Details"><span class="icon flaticon-setup"></span>
+                                        category</li>
+
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-8 col-md-12 col-sm-12">
+
+                        <!-- Form Widget -->
+                        <div class="form-widget ls-widget" id="General">
+                            <div class="widget-title">
+                                <h4><span class="icon flaticon-house"></span>Update Item</h4>
+                            </div>
+                            <div class="widget-content">
+
+                                <div class="default-form">
+                                    <form action="" method="post" class="form" enctype="multipart/form-data" id="formupdate">
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Add Listing -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer style-two">
+            <!-- Footer Upper -->
+            <div class="footer-upper">
+                <ul class="footer-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listing-layout-2.html">items</a></li>
+                    <li><a href="dashboard-profile.html">Profil</a></li>
+                    <li><a href="about-us.html">about us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Content -->
+            <div class="footer-content">
+                <div class="auto-container">
+                    <ul class="copyright-text">
+                        <li>Copyright © 2019 Listdo</li>
+                        <li>New York, NY</li>
+                        <li><a href="#">+61 2 8236 9200</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- Scroll To Top -->
+            <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-up"></span></div>
+        </footer>
+        <!-- End Footer -->
+
+    </div><!-- End Page Wrapper -->
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/chosen.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/jquery.modal.min.js"></script>
+    <script src="js/jquery.hideseek.min.js"></script>
+    <script src="js/mmenu.polyfills.js"></script>
+    <script src="js/sticky_sidebar.min.js"></script>
+    <script src="js/mmenu.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/script.js"></script>
+    <!--Google Map APi Key-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
+    <script src="js/map-script.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js'></script>
+
+    <!--End Google Map APi-->
+
+
+</body>
+<style>
+    html {
+        background: #ffffff;
+    }
+
+    .wrap {
+        width: 1200px;
+        margin: 30px auto;
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: 300px auto;
+    }
+
+    .form input {
+        width: 100%;
+        border: none;
+        padding: 20px;
+        font-size: 1em;
+        outline: none;
+        margin-bottom: 5px;
+        background: #ddd;
+        border-radius: 10px;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .form input:focus {
+        background: #aaa;
+    }
+
+    .form .form__btn {
+        color: #fff;
+        background: rgb(63, 192, 46);
+    }
+
+    #map {
+        width: 220%;
+        height: 300px;
+        border-radius: 10px;
+    }
+</style>
+<!-- Mirrored from creativelayers.net/themes/listdo-html/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:30:42 GMT -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    window.onload = function() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        document.getElementById('formupdate').action = '/items/'+urlParams.get('id');
+        
+            $.get('/items/'+urlParams.get('id'), (item) => {
+                $('#formupdate').append(`
+                <div class="form-group">
+                                            <label>What is your purpose of filling this form?</label>
+                                            <select name="type" id="type">
+                                                <option value="lost">Lost item</option>
+                                                <option value="found">Found item </option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" name="title" id="title" value="`+ item.title + `" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Can you give a description about the item?</label>
+                                            <textarea name="description" id="description" > `+ item.description + `</textarea>
+                                        </div>
+                                        <!-- Uploading Widget .-->
+                                        <div class="uploading-widget ls-widget" id="Images">
+                                            <div class="widget-title">
+                                                <h4><span class="icon flaticon-gallery"></span> Image</h4>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="uploading-outer">
+                                                    <div class="uploadButton">
+                                                        
+                                                        <input class="uploadButton-button ripple-effect" type="file" name="image"
+                                                        id="image"  optionnel>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="bottom-text">Maximum file size: 10 MB.</div>
+                                            </div>
+                                        </div>
+                                        <!-- Form Widget -->
+                                        <div class="form-widget ls-widget" id="Contact-Information">
+                                            <div class="widget-title">
+                                                <h4><span class="icon flaticon-house"></span> Contact Information</h4>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="default-form">
+
+                                                    <div class="form-group">
+                                                        <label>Please write your phone number</label>
+                                                        <input type="text" name="phone" id="phone" value="`+ item.phone + `" required>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Form Widget -->
+                                        <div class="form-widget ls-widget" id="Location">
+                                            <div class="widget-title">
+                                                <h4><span class="icon flaticon-pin"></span>item Location</h4>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="default-form">
+
+                                                    <div class="form-group">
+                                                        <label>City</label>
+                                                        <input type="text" name="City" id="City" value="`+ item.City + `" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Address</label>
+                                                        <input type="text" name="Address" id="Address" value="`+ item.Address + `" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Zip-Code</label>
+                                                        <input type="text" name="State" id="State" value="`+ item.State + `" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Map</label>
+                                                        <div class="map-box">
+                                                            <div class="wrap">
+                                                                <div>
+                                                                    <div id="map"></div>
+                                                                    <input type="text" id="latitude"
+                                                                        placeholder="latitude" name="latitude" value="`+ item.latitude + `">
+                                                                    <input type="text" id="longitude"
+                                                                        placeholder="longitude" name="longitude" value="`+ item.longitude + `">
+                                                                        
+
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Form Widget -->
+                                            <div class="form-widget ls-widget" id="Listing-Details">
+                                                <div class="widget-title">
+                                                    <h4><span class="icon flaticon-pin"></span>category </h4>
+                                                    <label class="switch">
+                                                        <input type="checkbox" checked="" >
+
+                                                    </label>
+                                                </div>
+                                                <div class="widget-content">
+                                                    <div class="default-form">
+
+                                                        <!-- Search Select -->
+                                                        <div class="form-group choices-style-two">
+                                                            <label>category</label>
+                                                            <select data-placeholder="Choose a category..."
+                                                                class="chosen-select" multiple tabindex="4">
+                                                                <option value="purses">purses </option>
+                                                                <option value="papers">papers ( CIN , passoprt ...)
+                                                                </option>
+                                                                <option value="animals">animals</option>
+                                                                <option value="smart tek">smart Tek(smartphone , laptop
+                                                                    ... )</option>
+                                                                <option value="others">others...</option>
+                                                            </select>
+                                                        </div>
+
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <button type="submit" class="theme-btn btn-style-one small bg-gray"><span
+                                                class="icon flaticon-edit"></span>Edit</button></a>
+                                        
+                
+                
+                
+                `)
+            })
+                    
+    }
+</script>
+<script>
+    let mapOptions = {
+  center: [33.7931605, 9.5607653],
+  zoom: 6
+};
+
+let map = new L.map('map', mapOptions);
+
+let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+
+let marker = null;
+
+map.on('click', async (event) => {
+
+  if (marker !== null) {
+    map.removeLayer(marker);
+  }
+
+  marker = L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
+
+  const x = document.getElementById('latitude').value = event.latlng.lat;
+  const y = document.getElementById('longitude').value = event.latlng.lng;
+
+  const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${event.latlng.lat}&lon=${event.latlng.lng}&format=json`);
+  const data = await response.json();
+
+  const address = `${data.address.city || data.address.town || data.address.village || ''}, ${data.address.country}`;
+  const city =`${data.address.city || data.address.town || data.address.village || ''}`
+  document.getElementById('Address').value = address;
+  document.getElementById('City').value = city;
+
+});
+
+</script>
+
+</html>
