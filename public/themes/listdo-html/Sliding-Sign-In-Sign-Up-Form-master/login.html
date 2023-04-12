@@ -13,8 +13,42 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form onsubmit="return false" class="sign-in-form" action="/login" method="POST" >
-          <h2 class="title">Sign in </h2>
+        <form  class="sign-in-form" action="/login" method="POST" >
+          <% if(typeof errors != 'undefined') { %>
+            <% errors.forEach(function(error) { %>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <%= error.msg %>              
+                <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+  
+                </button>
+              </div>
+                 
+             <% }); %>
+          <% } %>
+  
+          <% if (typeof success_msg != 'undefined') { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= success_msg %>              
+              <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+            </div>
+  
+          <% } %>
+          
+          <% if (typeof error != 'undefined') { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= error %>              
+              <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+            </div>
+  
+          <% } %>
+          <h2 class="title">Sign in</h2>
         
           <div class="input-field">
 
@@ -26,6 +60,7 @@
               name="email"
               class="form-control"
               placeholder="Enter Email"
+              
             />
                   
           </div>
@@ -38,10 +73,11 @@
               name="password"
               class="form-control"
               placeholder="Enter Password"
+              
             />
           </div>
 
-          <input type="submit" value="Login" class="btn btn-primary btn-block solid" onclick="location.replace('../index.html')" />
+          <input type="submit" value="Login" class="btn btn-primary btn-block solid"  />
           
         </form>
         <form class="sign-up-form" action="/register" method="POST" >

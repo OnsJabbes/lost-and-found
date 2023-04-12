@@ -62,7 +62,8 @@ router.post('/', upload.single('image'), function(req, res) {
       description: req.body.description,
       phone: req.body.phone,
       type: req.body.type,
-      image: result.url
+      image: result.url , 
+      category: req.body.category,
     });
 
     // Save the new item to the database
@@ -77,21 +78,75 @@ router.post('/', upload.single('image'), function(req, res) {
   });
 });
 
-// Handle PUT requests to update an item
-router.post('/update/:id', (req, res) => {
-  const itemId = req.params.id;
-  const update = req.body;
 
-  Item.findByIdAndUpdate(itemId, update, { new: true })
-    .then(updatedItem => {
-      // Rediriger l'utilisateur vers une page différente après la mise à jour
-      res.redirect('/dashboard-listing.html');
+
+
+// Handle PUT requests to update an item
+router.post('/items/:id', upload.single('image'), (req, res) => {
+  const id = req.params.id;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: 'Invalid ID' });
+  }
+
+  // Find the item by ID
+  Item.findById(id)
+    .then(item => {
+      if (!item) {
+        return res.status(404).json({ error: 'Item not found' });
+      }
+
+      // Update the item with the new data
+      item.latitude = req.body.latitude;
+      item.longitude = req.body.longitude;
+      item.Address = req.body.Address;
+      item.City = req.body.City;
+      item.State = req.body.State;
+      item.title = req.body.title;
+      item.description = req.body.description;
+      item.phone = req.body.phone;
+      item.type = req.body.type;
+      item.category = req.body.category;
+
+
+      // Upload the new image to Cloudinary if provided
+      if (req.file) {
+        const imagePath = req.file.path;
+        cloudinary.uploader.upload(imagePath, function(err, result) {
+          if (err) {
+            console.log(err);
+            return res.status(500).send(err);
+          }
+          console.log(result);
+          item.image = result.url;
+          // Save the updated item to the database
+          item.save()
+            .then(() => {
+              res.redirect('/dashboard-listing.html');
+            })
+            .catch((error) => {
+              console.log(error);
+              // handle error
+            });
+        });
+      } else {
+        // Save the updated item to the database
+        item.save()
+          .then(() => {
+            res.redirect('/dashboard-listing.html');
+          })
+          .catch((error) => {
+            console.log(error);
+            // handle error
+          });
+      }
     })
     .catch(err => {
       console.log(err);
       res.status(500).json({ error: 'Error updating item' });
     });
 });
+
+
 
 
 

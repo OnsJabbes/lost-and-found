@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 let ejs = require ('ejs') ;
 
@@ -30,6 +31,7 @@ app.use(
   })
 );
 app.use(flash());
+app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -40,7 +42,7 @@ app.set('views',__dirname + '/public/themes/listdo-html/Sliding-Sign-In-Sign-Up-
 app.engine('html', require('ejs').renderFile);
 
 
-// Express session
+
 
 //variable globale 
 app.use(function(req, res, next) {

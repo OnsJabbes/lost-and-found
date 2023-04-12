@@ -5,10 +5,23 @@ const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Load User model
 const User = require('../models/User');
 
 const { JsonWebTokenError } = require('jsonwebtoken');
+const { token } = require('morgan');
 
 router.use(express.json());
 
@@ -50,7 +63,7 @@ router.post('/register', (req, res) => {
 	}
 
 	if (password.length < 6) {
-	errors.push({ msg: 'Passwords must be at least 6 characters' });
+		errors.push({ msg: 'Passwords must be at least 6 characters' });
 	}
 
 	if (errors.length > 0) {
@@ -103,13 +116,13 @@ router.post('/register', (req, res) => {
 									to: email,
 									subject: "Verification",
 									html: `
-          <div>
-          <h1>lost and found  </h1>
-            <h2>welcome ${name} ! </h2>
-            <p>enter code <b> ${activationCode} </b> in the app to verify your email adress and complete verification </p>
-            <p> this code <b> expires in 1 minute  </b> . <p>
-            <a href="http://localhost:8000//users/verification">click here to insert your code</a>
-            </div>`,
+											<div>
+											<h1>lost and found  </h1>
+												<h2>welcome ${name} ! </h2>
+												<p>enter code <b> ${activationCode} </b> in the app to verify your email adress and complete verification </p>
+												<p> this code <b> expires in 1 minute  </b> . <p>
+												<a href="http://localhost:8000//users/verification">click here to insert your code</a>
+												</div>`,
 								}
 
 								transporter.sendMail(mailoptions, function (err, info) {
@@ -120,7 +133,11 @@ router.post('/register', (req, res) => {
 										console.log('Verfication email is sent to your gmail account');
 									}
 								})
-
+								tokenid = generateToken({
+									email: newUser.email,
+								})
+								console.log("token", tokenid)
+								res.cookie('session', tokenid)
 								res.render('verification.html');
 							})
 							.catch(err => console.log(err));
@@ -137,93 +154,97 @@ router.get('/verification', (req, res) => res.render('verification.html'));
 
 //verif 
 router.post('/users/verification', async (req, res) => {
- 
-		const { email, code } = req.body;
-		let errors = [];
-      	console.log(email);
+
+	const { code } = req.body
+
+	email = jwt.decode(req.cookies.session).email
+	console.log(email, code)
+	//res.send('132') ; 
+	let errors = [];
 
 
-		const userverification = await User.find({
-				email
-			});
-	if (userverification.length <= 0) {
-			 
-   
-		const { expiresAt } = userverification[0];
-		const { activationCode } = userverification[0];
+	const user = await User.findOne({ email });
 
-	   console.log(activationCode);
-	   console.log(code); 
+	if (user) {
+		console.log(user)
+		const { expiresAt } = user.expiresAt;
+		const { activationCode } = user.activationCode;
 
-		    if (expiresAt < Date.now()) {
+		if (expiresAt < Date.now()) {
+			console.log('date verif')
 			User.deleteMany({ email });
-			errors.push({ msg:"expiered code retry registration"})	; 
-			res.render('verification', {errors }) ;  		
-			} else 
+			errors.push({ msg: "expiered code retry registration" });
+			res.render('verification.html', { errors });
+		} 
+		if (!activationCode == code) {
+			console.log('code no')
 
-		   if (!activationCode == code) {
-						
-					errors.push({msg:"invalid code passed . check your email"})	
-					res.render('verification', {errors }) ; } 
-	}else {
-						//success 
-						await User.updateOne({ email }, { isActive: true });
-
-						res.render('/login.html');
-						return res.status(200).json({
-							msg:"valid verification now you can log in"
-						})	
-    }
-
+			errors.push({ msg: "invalid code passed . check your email" })
+			res.render('verification.html', { errors });
+		}else {
+			console.log('code yes')
 	
+			//success 
+			await User.updateOne({ email }, { isActive: true });
+			errors.push({
+				msg: "valid verification now you can log in"
+			})
+			res.render('login.html',{errors});
+		}
+	} 
 });
 
 // Login Page
 router.get('/login', (req, res) => res.render('login'));
 
-// Login
+
+// Login Page
+
 router.post('/login', async (req, res) => {
-	try{
-		const { email , password } = req.body;
-		const exist = await User.findOne({email});
-
-		if(!exist){
-			return res.status(404).json({
-				msg:"user with the given email doesn't exist"
-			})
-		}else{
-			if(exist.isActive == false){
-				return res.status(401).json({
-					msg:"user is not verified"
-				})
-			}
-
-			const match = await bcrypt.compare(password , exist.password);
-
-			if(match){
-				return res.status(200).json({
-					msg:"logged in successfully",
-					token:generateToken({
-						name:exist.name,
-						email:exist.email
+	let errors = [];
+	const { email, password } = req.body;
+	console.log(req.body)
+	// Check if both email and password fields are present in the request body
+	if (!email || !password) {
+		errors.push({ msg: 'Please provide both email and password' });
+		res.render('login.html', { errors });
+	} else {
+		user = await User.findOne({ email })
+		console.log(user)
+		if (!user) {
+			errors.push({ msg: 'User not found' });
+			res.render('login.html', { errors });
+		} else {
+			salt = await bcrypt.genSalt(10)
+			console.log(salt)
+			password_hash = await bcrypt.hash(password, salt);
+			console.log(password_hash)
+			const isPasswordMatch = await bcrypt.compare(password, user.password);
+			console.log(isPasswordMatch)
+			if (isPasswordMatch) {
+				if (user.isActive) {
+					tokenid = generateToken({
+						email: user.email,
 					})
-				})
+					res.cookie('session', tokenid)
+					res.render('../index.html', { errors });
+				} else {
+					errors.push({ msg: 'User not active ' })
+					res.render('login.html', { errors })
+				}
 
-			}else{
-				return res.status(400).json({
-					msg:"wrong password"
-				})
+			} else {
+				errors.push({ msg: 'Password missmatch' })
+				res.render('login.html', { errors })
 			}
+
 		}
-	}catch(err){
-		return res.status(400).json({
-			msg:"error while signing in"
-		})
 	}
 });
 
-function generateToken(payload){
-	return jwt.sign(payload , "secret123" , {expiresIn:"30d"});
+
+function generateToken(payload) {
+	return jwt.sign(payload, "secret123", { expiresIn: "30d" });
 }
 
 module.exports = router;

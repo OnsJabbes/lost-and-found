@@ -202,8 +202,9 @@
                             <div class="widget-content">
 
                                 <div class="default-form">
-                                    <form action="" method="post" class="form" enctype="multipart/form-data" id="formupdate">
-                                        
+                                    <form action="" method="post" class="form" enctype="multipart/form-data"
+                                        id="formupdate">
+
                                     </form>
                                 </div>
                             </div>
@@ -325,26 +326,24 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    window.onload = function() {
+    window.onload = function () {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        document.getElementById('formupdate').action = '/update/'+urlParams.get('id');
-        
-            $.get('/items/'+urlParams.get('id'), (item) => {
-                $('#formupdate').append(`
+        document.getElementById('formupdate').action = '/items/' + urlParams.get('id');
+
+        $.get('/items/' + urlParams.get('id'), (item) => {
+            $('#formupdate').append(`
                 <div class="form-group">
                                             <label>What is your purpose of filling this form?</label>
                                             <select name="type" id="type">
                                                 <option value="lost">Lost item</option>
                                                 <option value="found">Found item </option>
-
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Title</label>
                                             <input type="text" name="title" id="title" value="`+ item.title + `" required>
                                         </div>
-
                                         <div class="form-group">
                                             <label>Can you give a description about the item?</label>
                                             <textarea name="description" id="description" > `+ item.description + `</textarea>
@@ -373,12 +372,10 @@
                                             </div>
                                             <div class="widget-content">
                                                 <div class="default-form">
-
                                                     <div class="form-group">
                                                         <label>Please write your phone number</label>
                                                         <input type="text" name="phone" id="phone" value="`+ item.phone + `" required>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -389,7 +386,6 @@
                                             </div>
                                             <div class="widget-content">
                                                 <div class="default-form">
-
                                                     <div class="form-group">
                                                         <label>City</label>
                                                         <input type="text" name="City" id="City" value="`+ item.City + `" required>
@@ -413,13 +409,9 @@
                                                                     <input type="text" id="longitude"
                                                                         placeholder="longitude" name="longitude" value="`+ item.longitude + `">
                                                                         
-
-
                                                                 </div>
-
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -429,17 +421,15 @@
                                                     <h4><span class="icon flaticon-pin"></span>category </h4>
                                                     <label class="switch">
                                                         <input type="checkbox" checked="" >
-
                                                     </label>
                                                 </div>
                                                 <div class="widget-content">
                                                     <div class="default-form">
-
                                                         <!-- Search Select -->
                                                         <div class="form-group choices-style-two">
                                                             <label>category</label>
                                                             <select data-placeholder="Choose a category..."
-                                                                class="chosen-select" multiple tabindex="4">
+                                                                class="chosen-select" multiple tabindex="4" id="category" name="category" >
                                                                 <option value="purses">purses </option>
                                                                 <option value="papers">papers ( CIN , passoprt ...)
                                                                 </option>
@@ -449,60 +439,51 @@
                                                                 <option value="others">others...</option>
                                                             </select>
                                                         </div>
-
-
-
-
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form enctype="multipart/form-data" method="post" action="/update/`+ item._id + ` ">
-                                            <input type="hidden" name="id" value="`+ item.id + ` ">
+                                           
                                             <button type="submit" class="theme-btn btn-style-one small bg-gray"><span
                                                 class="icon flaticon-edit"></span>Edit</button></a>
-                                        </form>
+                                        
                 
                 
                 
                 `)
-            })
-                    
+            let mapOptions = {
+                center: [33.7931605, 9.5607653],
+                zoom: 6
+            };
+
+            let map = new L.map('map', mapOptions);
+
+            let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            map.addLayer(layer);
+
+            let marker = null;
+
+            map.on('click', async (event) => {
+
+                if (marker !== null) {
+                    map.removeLayer(marker);
+                }
+
+                marker = L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
+
+                const x = document.getElementById('latitude').value = event.latlng.lat;
+                const y = document.getElementById('longitude').value = event.latlng.lng;
+
+                const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${event.latlng.lat}&lon=${event.latlng.lng}&format=json`);
+                const data = await response.json();
+
+                const address = `${data.address.city || data.address.town || data.address.village || ''}, ${data.address.country}`;
+                const city = `${data.address.city || data.address.town || data.address.village || ''}`
+                document.getElementById('Address').value = address;
+                document.getElementById('City').value = city;
+
+            });
+        })
     }
-</script>
-<script>
-    let mapOptions = {
-  center: [33.7931605, 9.5607653],
-  zoom: 6
-};
-
-let map = new L.map('map', mapOptions);
-
-let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-let marker = null;
-
-map.on('click', async (event) => {
-
-  if (marker !== null) {
-    map.removeLayer(marker);
-  }
-
-  marker = L.marker([event.latlng.lat, event.latlng.lng]).addTo(map);
-
-  const x = document.getElementById('latitude').value = event.latlng.lat;
-  const y = document.getElementById('longitude').value = event.latlng.lng;
-
-  const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${event.latlng.lat}&lon=${event.latlng.lng}&format=json`);
-  const data = await response.json();
-
-  const address = `${data.address.city || data.address.town || data.address.village || ''}, ${data.address.country}`;
-  const city =`${data.address.city || data.address.town || data.address.village || ''}`
-  document.getElementById('Address').value = address;
-  document.getElementById('City').value = city;
-
-});
-
 </script>
 
 </html>
