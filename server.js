@@ -13,14 +13,9 @@ let ejs = require ('ejs') ;
 
 const itemRoute = require('./routes/item');
 const userRoute = require ('./routes/users') ; 
+const contactRoute = require ('./routes/contact'); 
 
-// let auth  = (req,res,next)=>{
-//   if(req.user){
-//     return next 
-//   }
-//   return res.redirect('login')
-// }
-//app.use(auth)
+
 
 const app = express();
 app.use(
@@ -37,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(itemRoute);
 app.use(userRoute) ; 
+app.use(contactRoute); 
 
 app.set('views',__dirname + '/public/themes/listdo-html/Sliding-Sign-In-Sign-Up-Form-master/');
 app.engine('html', require('ejs').renderFile);

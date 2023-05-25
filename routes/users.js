@@ -3,20 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const  mongoose= require('mongoose')
 // Load User model
 const User = require('../models/User');
 
@@ -42,6 +29,8 @@ var transporter = nodemailer.createTransport({
 		rejectUnauthorized: false
 	}
 })
+
+const JWT_SECRET = "mysecretkey";
 
 // Register
 router.post('/register', (req, res) => {
@@ -121,7 +110,7 @@ router.post('/register', (req, res) => {
 												<h2>welcome ${name} ! </h2>
 												<p>enter code <b> ${activationCode} </b> in the app to verify your email adress and complete verification </p>
 												<p> this code <b> expires in 1 minute  </b> . <p>
-												<a href="http://localhost:8000//users/verification">click here to insert your code</a>
+												
 												</div>`,
 								}
 
@@ -159,7 +148,7 @@ router.post('/users/verification', async (req, res) => {
 
 	email = jwt.decode(req.cookies.session).email
 	console.log(email, code)
-	//res.send('132') ; 
+	
 	let errors = [];
 
 
@@ -175,27 +164,27 @@ router.post('/users/verification', async (req, res) => {
 			User.deleteMany({ email });
 			errors.push({ msg: "expiered code retry registration" });
 			res.render('verification.html', { errors });
-		} 
+		}
 		if (!activationCode == code) {
 			console.log('code no')
 
 			errors.push({ msg: "invalid code passed . check your email" })
 			res.render('verification.html', { errors });
-		}else {
+		} else {
 			console.log('code yes')
-	
+
 			//success 
 			await User.updateOne({ email }, { isActive: true });
 			errors.push({
 				msg: "valid verification now you can log in"
 			})
-			res.render('login.html',{errors});
+			res.render('login.html', { errors });
 		}
-	} 
+	}
 });
 
 // Login Page
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', (req, res) => res.render('login.html'));
 
 
 // Login Page
@@ -246,5 +235,135 @@ router.post('/login', async (req, res) => {
 function generateToken(payload) {
 	return jwt.sign(payload, "secret123", { expiresIn: "30d" });
 }
+
+router.get('/forgot-password', (req, res) => {
+	res.render('email.html');
+});
+
+router.post("/forgot-password", async (req, res) => {
+	let errors = [];
+	const { email } = req.body;
+
+	try {
+		if (!email ) {
+			errors.push({ msg: 'Please provide your email ' });
+			res.render('email.html', { errors });
+		} else {
+			const oldUser = await User.findOne({ email });
+			
+			if (!oldUser) {
+				errors.push({ msg: 'User not found' });
+				res.render('email.html', { errors });
+			} else {
+				const secret = JWT_SECRET + oldUser.password;
+				const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
+					expiresIn: "30m",
+				});
+				
+				const link = `http://localhost:5000/reset-password/${oldUser._id}/${token}`;
+				console.log(link);
+				var mailoptions = {
+					from: 'onsjabes@gmail.com',
+					to: email,
+					subject: "reset password",
+					html: `
+						<div>
+						    <h1>lost and found  </h1>
+							<p>Please click on the following link to reset your password:</p>
+		                    <a href="${link}">${link}</a>
+		                    <p>If you did not request a password reset, please ignore this email.</p>
+		                    <p>Regards,</p>
+		                    <p>Lost and Found Team</p>
+							
+						</div>`,
+				}
+
+				transporter.sendMail(mailoptions, function (err, info) {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log('Verification email is sent to your gmail account');
+					}
+					errors.push({ msg: "a reset link is sent to your email adresse " });
+					res.render('email.html', { errors }); 	
+				})
+			}
+		}
+	} catch (error) {
+		console.log(error);
+	}
+});
+
+router.get("/reset-password/:id/:token", async (req, res) => {
+	let errors = [];
+	const { id, token } = req.params;
+	try {
+	  const oldUser = await User.findOne({ _id: id });
+	  if (!oldUser) {
+		errors.push({ msg: 'User not found' });
+		return res.render('login.html', { errors });
+	  }
+	  
+	  const secret = JWT_SECRET + oldUser.password;
+	  try {
+		const verify = jwt.verify(token, secret);
+		errors.push({ msg: 'password changed successfully ' });
+		return res.render("password.html", { email: verify.email });
+	  } catch (error) {
+		errors.push({ msg: 'token not verified' });
+		return res.render('login.html', { errors });
+	  }
+	} catch (error) {
+	  console.log(error);
+	  return res.render('login.html', { errors });
+	}
+  });
+  
+  router.post("/reset-password/:id/:token", async (req, res) => {
+	let errors = [];
+	const {token,id} = req.params
+	const  password  = req.body.password;
+	console.log(req.body)
+	try {
+	  const oldUser = await User.findOne({ _id: id });
+	  console.log(oldUser)
+  
+	  if (!oldUser) {
+		errors.push({ msg: 'User not found' });
+		return res.render('login.html', { errors });
+	  }
+  
+	  const secret = JWT_SECRET + oldUser.password;
+  
+	  try {
+		const encryptedPassword = await bcrypt.hash(password, 10);
+  
+		await User.updateOne(
+		  {
+			_id:id,
+		  },
+		  {
+			$set: {
+			  password: encryptedPassword,
+			},
+		  }
+		);
+		res.send('true');
+		res.end()
+		return ;
+	  } catch (error) {
+		console.log(error);
+		return res.json({ status: "Something Went Wrong" });
+	  }
+	} catch (error) {
+	  console.log(error);
+	  errors.push({msg:error})
+	  return res.render('login.html', { errors });
+	}
+  });
+  
+
+
+
 
 module.exports = router;

@@ -5,6 +5,7 @@ const Item = require('../models/item');
 const cloudinary = require('cloudinary').v2;
 const path = require('path');
 const mongoose = require('mongoose');
+const { title } = require('process');
 
 
 // Configuration 
@@ -185,6 +186,106 @@ router.get('/items/:id', (req, res) => {
     });
 });
 
+
+
+
+router.get('/search/lost', async (req, res) => {
+  const category = req.query.category || 'All Categories';
+  const title = req.query.title || '';
+  const city = req.query.city || '';
+
+  // Check if any of the search parameters are empty
+  if (category === '' || title === '' || city === '') {
+    // Redirect the user back to the error page with an error message
+    const errorMessage = 'Please enter a value for all search fields.';
+    res.redirect(`/error-page.html?error=${errorMessage}`);
+    return;
+  }
+
+  try {
+    const query = req.query.q ? req.query.q.toString() : '';
+    const items = await Item.find({ 
+      $and: [
+        { title: { $regex: title, $options: "i" } },
+        { city: { $regex: city, $options: "i" } },
+        { category: { $regex: category, $options: "i" } }
+      ],
+      type: "lost"
+    });
+    // Pass search parameters to the redirect URL
+    
+    res.render('../listing-layout-3.html',{items});
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+router.get('/search/found', async (req, res) => {
+  const category = req.query.category || 'All Categories';
+  const title = req.query.title || '';
+  const city = req.query.city || '';
+
+  // Check if any of the search parameters are empty
+  if (category === '' || title === '' || city === '') {
+    // Redirect the user back to the error page with an error message
+    const errorMessage = 'Please enter a value for all search fields.';
+    res.redirect(`/error-page.html?error=${errorMessage}`);
+    return;
+  }
+
+  try {
+    const query = req.query.q ? req.query.q.toString() : '';
+    const items = await Item.find({ 
+      $and: [
+        { title: { $regex: title, $options: "i" } },
+        { city: { $regex: city, $options: "i" } },
+        { category: { $regex: category, $options: "i" } }
+      ],
+      type: "found"
+    });
+    // Pass search parameters to the redirect URL
+    
+    res.render('../listing-layout-3.html',{items});
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+
+router.get('/search', async (req, res) => {
+  const category = req.query.category || 'All Categories';
+  const title = req.query.title || '';
+  const city = req.query.city || '';
+
+  // Check if any of the search parameters are empty
+  if (category === '' || title === '' || city === '') {
+    // Redirect the user back to the error page with an error message
+    const errorMessage = 'Please enter a value for all search fields.';
+    res.redirect(`/error-page.html?error=${errorMessage}`);
+    return;
+  }
+
+  try {
+    const query = req.query.q ? req.query.q.toString() : '';
+    const items = await Item.find({ 
+      $and: [
+        { title: { $regex: title, $options: "i" } },
+        { city: { $regex: city, $options: "i" } },
+        { category: { $regex: category, $options: "i" } } , 
+        { type: { $regex: title , $options: "i" } }
+      ],
+      
+    });
+    // Pass search parameters to the redirect URL
+    
+    res.render('../listing-layout-3.html',{items});
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  }
+});
 
 
 

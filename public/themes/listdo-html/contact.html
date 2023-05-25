@@ -124,11 +124,7 @@
                         <!-- notification End -->
 
 
-                        <!-- Search Btn -->
-                        <div class="search-box">
-                            <button class="search-btn mobile-search-btn"><i
-                                    class="flaticon-magnifying-glass"></i></button>
-                        </div>
+                        
 
 
 
@@ -147,21 +143,7 @@
             <!-- Mobile Nav -->
             <div id="nav-mobile"></div>
 
-            <!-- Header Search -->
-            <div class="search-popup">
-                <span class="search-back-drop"></span>
 
-                <div class="search-inner">
-                    <button class="close-search"><span class="fa fa-times"></span></button>
-                    <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
-                        <div class="form-group">
-                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
-                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- End Header Search -->
 
 
         </header>
@@ -196,30 +178,29 @@
                                 <!-- Comment Form -->
                                 <div class="default-form">
                                     <!--Comment Form-->
-                                    <form action="#" method="post" id="email-form">
+                                    <form action="/contact" method="POST" id="email-form">
                                         <div class="row clearfix ">
                                             <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                                 <div class="response"></div>
                                             </div>
 
                                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                <input type="text" name="username" class="username" placeholder="Name *"
-                                                    required>
+                                                <input type="text" id="name" name="name" placeholder="user-name" required>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                <input type="email" name="email" class="email"
+                                                <input type="email" id="email" name="email"
                                                     placeholder="Your Email Address *" required>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                <input type="text" name="subject" class="subject"
+                                                <input type="text" id="subject" name="subject"
                                                     placeholder="Subject *" required>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                <textarea name="message" placeholder="Message" required=""></textarea>
+                                                <textarea id="message" name="message" rows="5" placeholder="Message" required=""></textarea>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                <button class="theme-btn btn-style-two" type="button" id="submit"
-                                                    name="submit-form">Submit Review</button>
+                                                <button class="theme-btn btn-style-two" type="submit" id="submit"
+                                                    name="submit-form">Submit</button>
                                             </div>
                                         </div>
                                     </form>
@@ -244,19 +225,6 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
-
-    <!-- Footer Content -->
-    <div class="footer-content">
-        <div class="auto-container">
-            <ul class="copyright-text">
-                <li>Copyright © 2019 Listdo</li>
-                <li>New York, NY</li>
-                <li><a href="#">+61 2 8236 9200</a></li>
-            </ul>
-        </div>
-    </div>
-
-   
 
     <!-- Scroll To Top -->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-up"></span></div>
@@ -286,6 +254,5 @@
     <!--End Google Map APi-->
 </body>
 
-<!-- Mirrored from creativelayers.net/themes/listdo-html/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:30:41 GMT -->
 
 </html>

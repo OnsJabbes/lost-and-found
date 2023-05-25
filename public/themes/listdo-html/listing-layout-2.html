@@ -124,11 +124,7 @@
                         <!-- notification End -->
 
 
-                        <!-- Search Btn -->
-                        <div class="search-box">
-                            <button class="search-btn mobile-search-btn"><i
-                                    class="flaticon-magnifying-glass"></i></button>
-                        </div>
+                        
 
 
 
@@ -147,21 +143,7 @@
             <!-- Mobile Nav -->
             <div id="nav-mobile"></div>
 
-            <!-- Header Search -->
-            <div class="search-popup">
-                <span class="search-back-drop"></span>
 
-                <div class="search-inner">
-                    <button class="close-search"><span class="fa fa-times"></span></button>
-                    <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
-                        <div class="form-group">
-                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
-                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- End Header Search -->
 
 
         </header>
@@ -186,7 +168,7 @@
 
                             <!-- Listing Form -->
                             <div class="listing-search-form">
-                                <form>
+                                <form method="get" action="/search">
                                     <div class="row">
                                         <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                             <input type="text" name="listing-search"
@@ -217,14 +199,17 @@
                                                 <option>Found</option>
                                             </select>
                                         </div>
+
+                                        
+
+                                    </div>
+                                    <div class="btn-box">
+                                        <button type="submit" class="theme-btn btn-style-one">Search <span
+                                                class="flaticon-magnifying-glass"></span></button>
                                     </div>
                                 </form>
                             </div>
-                            <!-- Btn Box -->
-                            <div class="btn-box">
-                                <button type="submit" class="theme-btn btn-style-one">Search <span
-                                        class="flaticon-magnifying-glass"></span></button>
-                            </div>
+                            
 
 
                         </div>
@@ -251,10 +236,14 @@
 
 
                             </div>
+
+
+                            
                             <!-- Pagination -->
 
                         </div>
                     </div>
+                  
                 </div>
             </div>
         </section>
@@ -272,20 +261,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Footer Content -->
-            <div class="footer-content">
-                <div class="auto-container">
-                    <ul class="copyright-text">
-                        <li>Copyright © 2019 Listdo</li>
-                        <li>New York, NY</li>
-                        <li><a href="#">+61 2 8236 9200</a></li>
-                    </ul>
-                </div>
-            </div>
-
-
-
+        
             <!-- Scroll To Top -->
             <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-up"></span></div>
         </footer>
@@ -314,6 +290,7 @@
     <script src="js/maps.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+       
         $(document).ready(() => {
             $.get('/items', (data) => {
                 data.forEach((item) => {
@@ -361,6 +338,5 @@
     </script>
 </body>
 
-<!-- Mirrored from creativelayers.net/themes/listdo-html/listing-layout-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:30:03 GMT -->
 
 </html>
