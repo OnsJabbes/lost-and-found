@@ -38,7 +38,7 @@
             <!-- Main box -->
             <div class="main-box">
                 <div class="logo-box">
-                    <div class="logo"><a href="index.html"><img src="images/logo-3.png" width="60" height="0" alt=""
+                    <div class="logo"><a href="index.html"><img src="images/logo-3.jpg" width="60" height="0" alt=""
                                 title=""></a></div>
                 </div>
 
@@ -53,7 +53,7 @@
                                 <span><a href="listing-layout-2.html">items</a></span>
                             </li>
                             <li>
-                                <span><a href="dashboard-profile.html">Profil</a></span>
+                                <span><a href="/profiles">Profile</a></span>
                             </li>
 
 
@@ -103,7 +103,7 @@
 
             <!-- Mobile Header -->
             <div class="mobile-header">
-                <div class="logo"><a href="index.html"><img src="images/logo-3.png" alt="" title=""></a></div>
+                <div class="logo"><a href="index.html"><img src="images/logo-3.jpg" alt="" title=""></a></div>
 
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -124,12 +124,7 @@
                         <!-- notification End -->
 
 
-                        <!-- Search Btn -->
-                        <div class="search-box">
-                            <button class="search-btn mobile-search-btn"><i
-                                    class="flaticon-magnifying-glass"></i></button>
-                        </div>
-
+                        
 
 
 
@@ -147,21 +142,7 @@
             <!-- Mobile Nav -->
             <div id="nav-mobile"></div>
 
-            <!-- Header Search -->
-            <div class="search-popup">
-                <span class="search-back-drop"></span>
-
-                <div class="search-inner">
-                    <button class="close-search"><span class="fa fa-times"></span></button>
-                    <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
-                        <div class="form-group">
-                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
-                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- End Header Search -->
+            
 
 
         </header>
@@ -173,14 +154,11 @@
         <div class="user-sidebar">
             <div class="sidebar-inner">
                 <div class="sidebar-header">
-                    <div class="user-box">
-                        <figure class="user-image"><img src="images/resource/user-img.jpg" alt=""></figure>
-                        <h4 class="user-name">Hello, Ali!</h4>
-                    </div>
+                   
                 </div>
 
                 <ul class="navigation">
-                    <li><a href="dashboard-profile.html"><i class="la la-user"></i>Profile</a></li>
+                    <li><a href="/profiles"><i class="la la-user"></i>Profile</a></li>
                     <li class="active"><a href="dashboard-listing.html"><i class="la la-layer-group"></i>Listings</a>
                     </li>
                     <li><a href="./chatt/dashboard-messages.html"><i class="la la-envelope"></i> Messages
@@ -271,7 +249,7 @@
 
     <script>
         $(document).ready(() => {
-            $.get('/items', (data) => {
+            $.get('/listitems', (data) => {
                 data.forEach((item) => {
                     $('.listing-block-seven').append(`
                     

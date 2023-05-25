@@ -4718,7 +4718,7 @@ section hr {
   top: 0;
   height: 100%;
   width: 100%;
-  background: #ffffff;
+  
   content: "";
   opacity: 0.5;
 }

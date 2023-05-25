@@ -13,6 +13,21 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  website: {
+    type: String,
+    required: false,
+    
+  },
+  
+  phone: {
+    type: Number,
+    required: false,
+  },
+  
+  image: {
+    type: String,
+    required:false,
+  }, 
 
   createdAt: {
     type: Date,
@@ -22,7 +37,8 @@ const UserSchema = new mongoose.Schema({
   isActive : {
     type : Boolean , 
     default : false , 
-  },  
+  }, 
+
 
   userId : String ,
 

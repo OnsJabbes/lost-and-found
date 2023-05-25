@@ -7,12 +7,15 @@ const name = prompt('What is your name?')
 appendMessage('You joined')
 socket.emit('new-user', name)
 
+
 socket.on('chat-message', data => {
   appendMessage(`${data.name}: ${data.message}`)
+  document.getElementById('user-name').innerText = `User: ${data.name}`;
 })
 
 socket.on('user-connected', name => {
   appendMessage(`${name} connected`)
+  document.getElementById('user-name').innerText = `User: ${name}`;
 })
 
 socket.on('user-disconnected', name => {

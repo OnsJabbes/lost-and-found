@@ -13,6 +13,7 @@ let ejs = require ('ejs') ;
 
 const itemRoute = require('./routes/item');
 const userRoute = require ('./routes/users') ; 
+const adminRoute = require ('./routes/admin') ; 
 
 // let auth  = (req,res,next)=>{
 //   if(req.user){
@@ -37,9 +38,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(itemRoute);
 app.use(userRoute) ; 
+app.use(adminRoute) ;
 
 app.set('views',__dirname + '/public/themes/listdo-html/Sliding-Sign-In-Sign-Up-Form-master/');
 app.engine('html', require('ejs').renderFile);
+
+
 
 
 
@@ -63,7 +67,7 @@ app.use(fileUpload({
 
 // Connect to MongoDB
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://ons:24102001@cluster0.2izjmij.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect('mongodb+srv://mayssa:mayssa@cluster0.ckpide7.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }
 )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));

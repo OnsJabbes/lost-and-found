@@ -55,7 +55,7 @@
                                 <span><a href="../listing-layout-2.html">items</a></span>
                             </li>
                             <li>
-                                <span><a href="../dashboard-profile.html">Profil</a></span>
+                                <span><a href="../profiles">Profile</a></span>
                             </li>
 
 
@@ -127,13 +127,7 @@
                         <!-- notification End -->
 
 
-                        <!-- Search Btn -->
-                        <div class="search-box">
-                            <button class="search-btn mobile-search-btn"><i
-                                    class="flaticon-magnifying-glass"></i></button>
-                        </div>
-
-
+                       
 
 
                         <!-- Logout -->
@@ -150,22 +144,7 @@
             <!-- Mobile Nav -->
             <div id="nav-mobile"></div>
 
-            <!-- Header Search -->
-            <div class="search-popup">
-                <span class="search-back-drop"></span>
-
-                <div class="search-inner">
-                    <button class="close-search"><span class="fa fa-times"></span></button>
-                    <form method="post" action="https://creativelayers.net/themes/listdo-html/blog-showcase.html">
-                        <div class="form-group">
-                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
-                            <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- End Header Search -->
-
+            
 
         </header>
         <!--End Main Header -->
@@ -178,15 +157,14 @@
             <div class="sidebar-inner">
                 <div class="sidebar-header">
                     <div class="user-box">
-                        <figure class="user-image"><img src="../images/resource/user-img.jpg" alt=""></figure>
-                        <h4 class="user-name">Hello, Ali!</h4>
+                        
                     </div>
                 </div>
 
                 <ul class="navigation">
-                    <li><a href="../dashboard-profile.html"><i class="la la-user"></i>Profile</a></li>
+                    <li><a href="../profiles"><i class="la la-user"></i>Profile</a></li>
                     <li><a href="../dashboard-listing.html"><i class="la la-layer-group"></i>Listings</a></li>
-                    <li class="active"><a href="../dashboard-messages.html"><i class="la la-envelope"></i> Messages </a>
+                    <li class="active"><a href="dashboard-messages.html"><i class="la la-envelope"></i> Messages </a>
                     </li>
 
                     <li><a href="../Sliding-Sign-In-Sign-Up-Form-master/login.html"><i class="la la-sign-out"></i>Logout</a></li>
@@ -209,21 +187,14 @@
                             <div class="contacts_column col-lg-3 col-md-12 col-sm-12 chat" id="chat_contacts">
                                 <div class="card contacts_card">
                                     <div class="card-header">
-                                        <div class="search-form">
-                                            <input type="text" name="search" placeholder="Search">
-                                            <span class="search-btn"><i class="flaticon-magnifying-glass"></i></span>
-                                        </div>
+                                        
                                     </div>
                                     <div class="card-body contacts_body">
                                         <ul class="contacts">
                                             <li class="active">
                                                 <a href="#">
                                                     <div class="d-flex bd-highlight">
-                                                        <div class="img_cont">
-                                                            <img src="../images/resource/chat-thumb-5.jpg"
-                                                                class="rounded-circle user_img" alt="">
-                                                            <span class="online_icon"></span>
-                                                        </div>
+                                                        
 
                                                     </div>
                                                 </a>
@@ -238,12 +209,11 @@
                                     <div class="card-header msg_head">
                                         <div class="d-flex bd-highlight">
                                             <div class="img_cont">
-                                                <img src="../images/resource/chat-thumb-5.jpg" alt=""
-                                                    class="rounded-circle user_img">
+                                                <span  class=" x-icon flaticon-user rounded-circle user_img"></span>
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
-                                                <span>user name</span>
+                                                <span id="user-name"></span>
 
                                             </div>
                                         </div>

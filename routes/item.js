@@ -6,6 +6,15 @@ const cloudinary = require('cloudinary').v2;
 const path = require('path');
 const mongoose = require('mongoose');
 
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const User = require('../models/User');
+
+const { JsonWebTokenError } = require('jsonwebtoken');
+const { token } = require('morgan');
+
+
 
 // Configuration 
 cloudinary.config({
@@ -38,7 +47,45 @@ router.get('/items', (req, res) => {
     });
 });
 
-  // Handle POST requests to upload an imagee
+
+
+router.get('/listitems', (req, res) => {
+
+  const email = jwt.decode(req.cookies.session).email;
+  User.findOne({ email: email })
+    .then(user => {
+      if (!user) {
+        return res.status(404).json({ error: 'Profile not found' });
+      }
+      Item.find({email: email}) // filtrer les articles appartenant à l'utilisateur
+        .then(items => {
+          res.json(items);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json({ error: 'Error reading items' });
+        });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: 'Error reading profile' });
+    });
+});
+
+
+
+
+
+
+
+
+
+const notifier = require('node-notifier');
+
+// Initialize the notification count to 0
+let notificationCount = 0;
+
+// Handle POST requests to upload an image
 router.post('/', upload.single('image'), function(req, res) {
   // Get the path to the uploaded file
   const imagePath = req.file.path;
@@ -69,15 +116,23 @@ router.post('/', upload.single('image'), function(req, res) {
     // Save the new item to the database
     newItem.save()
     .then(() => {
+      // Increment the notification count and display it
+      notificationCount++;
+      console.log(`New Item Posted - Notification Count: ${notificationCount}`);
+      // Send notification
+      notifier.notify({
+        title: 'New Item Posted',
+        message: 'Your item has been posted successfully!'
+      });
+      
       res.redirect('/listing-layout-2.html');
     })
     .catch((error) => {
       console.log(error);
-      // handle errorr
+      // handle error
     });
   });
 });
-
 
 
 
@@ -184,6 +239,29 @@ router.get('/items/:id', (req, res) => {
       res.status(500).json({ error: 'Error reading item' });
     });
 });
+
+router.get('/item/:category', (req, res) => {
+  const category = req.params.category;
+  Item.find({ category: category })
+    .then(items => {
+      if (items.length === 0) {
+        return res.status(404).redirect("../error-page.html");
+      }
+      res.render('../list-category.html',{ items });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ error: 'Error reading items' });
+    });
+});
+
+
+
+
+
+
+
+
 
 
 
