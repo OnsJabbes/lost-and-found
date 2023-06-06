@@ -47,8 +47,8 @@ const UserSchema = new mongoose.Schema({
   code : String , 
    
   expiresAt : Date ,
-  
-  admin: {
+
+  isAdmin: {
     type: Boolean,
     default: false
   }

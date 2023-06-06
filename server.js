@@ -63,7 +63,7 @@ app.use(fileUpload({
 
 // Connect to MongoDB
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://mayssa:mayssa@cluster0.ckpide7.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect('mongodb+srv://ons:24102001@cluster0.2izjmij.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true }
 )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));

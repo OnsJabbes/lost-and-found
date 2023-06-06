@@ -227,11 +227,23 @@ router.post('/login', async (req, res) => {
 			console.log(isPasswordMatch)
 			if (isPasswordMatch) {
 				if (user.isActive) {
-					tokenid = generateToken({
+					if (user.isAdmin) {
+						// Generate token for admin user
+						let tokenid = generateToken({
+						  email: user.email,
+						  isAdmin: true
+						});
+						res.cookie('session', tokenid);
+						// Redirect to the admin dashboard
+						res.redirect('dashboard.html');
+					  } else {
+					  // Generate token for regular user
+					  let tokenid = generateToken({
 						email: user.email,
-					})
+						isAdmin: false
+					  });
 					res.cookie('session', tokenid)
-					res.render('../index.html', { errors });
+					res.render('../index.html', { errors }); }
 				} else {
 					errors.push({ msg: 'User not active ' })
 					res.render('login.html', { errors })
@@ -252,9 +264,19 @@ function generateToken(payload) {
 }
 
 
-
-
-
+// Admin Dashboard
+router.get('/dashboard', (req, res) => {
+	// Check if the user is logged in as an admin
+	const token = req.cookies.session;
+	const decodedToken = jwt.verify(token, 'secret123');
+	if (decodedToken.isAdmin) {
+	  // Render the admin dashboard
+	  res.render('dashboard.html');
+	} else {
+	  // Redirect to the login page or show an error message
+	  res.redirect('/login');
+	}
+  });
 
 // Configuration 
 cloudinary.config({

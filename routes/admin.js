@@ -25,9 +25,6 @@ router.get('/itemtable', (req, res) => {
 
 
   router.get('/usertable', (req, res) => {
-
-    
-
     User.find({ })
         .then(users => {
         if (users.length === 0) {
