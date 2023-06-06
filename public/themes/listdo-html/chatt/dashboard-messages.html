@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from creativelayers.net/themes/listdo-html/dashboard-messages.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:29:56 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Listdo | Just another HTML Template | Dashboard Messages</title>
+
+    <!-- Stylesheets -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../notification/css/style.css">
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+    <div class="page-wrapper dashboard">
+
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!-- Header Span -->
+        <span class="header-span"></span>
+
+        <!-- Main Header-->
+        <header class="main-header header-style-four">
+            <!-- Main box -->
+            <div class="main-box">
+                <div class="logo-box">
+                    <div class="logo"><a href="../index.html"><img src="../images/logo-3.jpg " width="60" height="0"
+                                alt="" title=""></a></div>
+                </div>
+
+                <!--Nav Box-->
+                <div class="nav-outer">
+                    <nav class="nav main-menu">
+                        <ul class="navigation" id="navbar">
+                            <li class="current dropdown">
+                                <a href="../index.html">Home</a>
+                            </li>
+                            <li>
+                                <span><a href="../listing-layout-2.html">items</a></span>
+                            </li>
+                            <li>
+                                <span><a href="../profiles">Profile</a></span>
+                            </li>
+
+
+                            <li class="dropdown">
+                                <span><a href="../about-us.html">About Us</a></span>
+                                <ul>
+                                    <li><a href="../how-it-works.html">How It Works</a></li>
+                                    <li><a href="../terms-and-condition.html">Terms and Condition</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../contact.html">Contact</a></li>
+                            <li class="mm-add-listing"><a href="../add-listing.html"
+                                    class="theme-btn btn-style-three"><span class="flaticon-plus-symbol"></span>Add
+                                    Post</a></li>
+                        </ul>
+                    </nav>
+                    <!-- Main Menu End-->
+
+                    <div class="outer-box">
+                        <!-- Add Listing -->
+                        <a href="../add-listing.html" class="add-listing"> <span class="flaticon-plus-symbol"></span>
+                            Add
+                            Post</a>
+
+                        <!-- notification -->
+
+
+                        <nav>
+                            <div class="icon">
+                                <a href="../dashboared-reviews.html"><img src="../notification/img/bell.png" alt="">
+                                    <span>10</span></a>
+                            </div>
+                        </nav>
+
+
+                        <!-- notification End -->
+
+
+
+                        <!-- Logout-->
+                        <div class="login-box">
+                            <span class="flaticon-user"></span>
+                            <a href="../Sliding-Sign-In-Sign-Up-Form-master/login.html">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Header -->
+            <div class="mobile-header">
+                <div class="logo"><a href="../index.html"><img src="../images/logo-3.jpg" alt="" title=""></a></div>
+
+                <!--Nav Box-->
+                <div class="nav-outer clearfix">
+
+
+                    <div class="outer-box">
+                        <!-- notification -->
+
+
+                        <nav>
+                            <div class="icon col-lg-4 col-md-6 col-sm-12">
+                                <a href="../dashboared-reviews.html"><img src="../notification/img/bell.png" alt="">
+                                    <span>10</span></a>
+                            </div>
+                        </nav>
+
+
+                        <!-- notification End -->
+
+
+                       
+
+
+                        <!-- Logout -->
+                        <div class="login-box">
+                            <a href="../Sliding-Sign-In-Sign-Up-Form-master/login.html"><span
+                                    class="flaticon-user"></span></a>
+                        </div>
+                        <a href="#nav-mobile" class="mobile-nav-toggler navbar-trigger"><span
+                                class="fa fa-bars"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="nav-mobile"></div>
+
+            
+
+        </header>
+        <!--End Main Header -->
+
+        <!-- Sidebar Backdrop -->
+        <div class="sidebar-backdrop"></div>
+
+        <!-- User Sidebar -->
+        <div class="user-sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-header">
+                    <div class="user-box">
+                        
+                    </div>
+                </div>
+
+                <ul class="navigation">
+                    <li><a href="../profiles"><i class="la la-user"></i>Profile</a></li>
+                    <li><a href="../dashboard-listing.html"><i class="la la-layer-group"></i>Listings</a></li>
+                    <li class="active"><a href="dashboard-messages.html"><i class="la la-envelope"></i> Messages </a>
+                    </li>
+
+                    <li><a href="../Sliding-Sign-In-Sign-Up-Form-master/login.html"><i class="la la-sign-out"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- End User Sidebar -->
+
+        <!-- Dashboard -->
+        <section class="user-dashboard">
+            <div class="dashboard-outer">
+                <!-- Chat Widget -->
+                <div class="chat-widget ls-widget">
+                    <div class="widget-title">
+                        <h4><span class="icon flaticon-mail"></span> Messages</h4>
+                        <button class="toggle-contact"><span class="fa fa-bars"></span></button>
+                    </div>
+                    <div class="widget-content">
+                        <div class="row no-gutters">
+                            <div class="contacts_column col-lg-3 col-md-12 col-sm-12 chat" id="chat_contacts">
+                                <div class="card contacts_card">
+                                    <div class="card-header">
+                                        
+                                    </div>
+                                    <div class="card-body contacts_body">
+                                        <ul class="contacts">
+                                            <li class="active">
+                                                <a href="#">
+                                                    <div class="d-flex bd-highlight">
+                                                        
+
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-12 col-sm-12 chat">
+                                <div class="card">
+                                    <div class="card-header msg_head">
+                                        <div class="d-flex bd-highlight">
+                                            <div class="img_cont">
+                                                <span  class=" x-icon flaticon-user rounded-circle user_img"></span>
+                                                <span class="online_icon"></span>
+                                            </div>
+                                            <div class="user_info">
+                                                <span id="user-name"></span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="message-container">
+
+                                    </div>
+
+
+
+                                    <div class="card-footer">
+                                        <div class="form-group mb-0">
+                                            <form id="send-container">
+                                                <input class="form-control type_msg" type="text" id="message-input">
+                                                <button type="submit" class="theme-btn btn-style-two submit-btn"
+                                                    id="send-button">Send
+                                                    Message</button>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Dashboard -->
+
+    </div><!-- End Page Wrapper -->
+
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/chosen.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.fancybox.js"></script>
+    <script src="../js/jquery.modal.min.js"></script>
+    <script src="../js/jquery.hideseek.min.js"></script>
+    <script src="../js/mmenu.polyfills.js"></script>
+    <script src="../js/mmenu.js"></script>
+    <script src="../js/appear.js"></script>
+    <script src="../js/owl.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+        #message-container {
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        #message-container div {
+            background-color: #e2e0ee;
+            padding: 5px 10px 10px 30px;
+            border-radius: 5px;
+        }
+
+        #message-container div:nth-child(2n) {
+            background-color: e2e0ee;
+            border-radius: 5px;
+            padding: 5px 10px 10px 30px;
+        }
+    </style>
+</body>
+
+<!-- Mirrored from creativelayers.net/themes/listdo-html/dashboard-messages.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 17 Feb 2023 00:29:57 GMT -->
+
+</html>
