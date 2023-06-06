@@ -47,6 +47,11 @@ const UserSchema = new mongoose.Schema({
   code : String , 
    
   expiresAt : Date ,
+  
+  admin: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const User = mongoose.model('User', UserSchema);
